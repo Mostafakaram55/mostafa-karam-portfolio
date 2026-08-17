@@ -1234,8 +1234,8 @@ textarea.form-control {
 
 .bento-card {
   position: relative;
-  background: rgba(18, 23, 35, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   padding: 2.25rem 2rem;
   overflow: hidden;
@@ -1249,8 +1249,9 @@ textarea.form-control {
 
 .bento-card:hover {
   transform: translateY(-8px) scale(1.01);
-  border-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  background: var(--bg-card-hover);
+  border-color: var(--border-color-hover);
+  box-shadow: var(--shadow-lg);
 }
 
 /* Background Glowing Spotlights */
@@ -1299,13 +1300,13 @@ textarea.form-control {
 .icon-cyan {
   background: rgba(0, 210, 255, 0.12);
   border: 1px solid rgba(0, 210, 255, 0.25);
-  color: #00d2ff;
+  color: var(--accent-cyan);
 }
 
 .icon-purple {
   background: rgba(168, 85, 247, 0.12);
   border: 1px solid rgba(168, 85, 247, 0.25);
-  color: #c084fc;
+  color: var(--accent-purple);
 }
 
 .icon-amber {
@@ -1317,7 +1318,7 @@ textarea.form-control {
 .icon-emerald {
   background: rgba(16, 185, 129, 0.12);
   border: 1px solid rgba(16, 185, 129, 0.25);
-  color: #34d399;
+  color: var(--accent-emerald);
 }
 
 .bento-card:hover .bento-icon-badge {
@@ -1334,13 +1335,13 @@ textarea.form-control {
   padding: 0.35rem 0.9rem;
   border-radius: var(--radius-full);
   background: rgba(0, 210, 255, 0.1);
-  color: #00d2ff;
+  color: var(--accent-cyan);
   border: 1px solid rgba(0, 210, 255, 0.2);
 }
 
 .pill-purple {
   background: rgba(168, 85, 247, 0.1);
-  color: #c084fc;
+  color: var(--accent-purple);
   border-color: rgba(168, 85, 247, 0.2);
 }
 
@@ -1352,7 +1353,7 @@ textarea.form-control {
 
 .pill-emerald {
   background: rgba(16, 185, 129, 0.1);
-  color: #34d399;
+  color: var(--accent-emerald);
   border-color: rgba(16, 185, 129, 0.2);
 }
 
@@ -1383,7 +1384,7 @@ textarea.form-control {
   font-size: 0.8rem;
   font-weight: 500;
   color: var(--text-primary);
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--bg-secondary);
   border: 1px solid var(--border-color);
   padding: 0.3rem 0.75rem;
   border-radius: 8px;
@@ -1394,8 +1395,7 @@ textarea.form-control {
 }
 
 .bento-card:hover .chip {
-  border-color: rgba(255, 255, 255, 0.15);
-  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--border-color-hover);
 }
 
 /* Equalizer Animation for Podcast Card */
@@ -1408,7 +1408,7 @@ textarea.form-control {
 
 .equalizer-bar span {
   width: 4px;
-  background: #c084fc;
+  background: var(--accent-purple);
   border-radius: 2px;
   animation: bounceBar 1.2s ease-in-out infinite alternate;
 }
@@ -1426,7 +1426,7 @@ textarea.form-control {
 
 .bento-footer-tag {
   font-size: 0.82rem;
-  color: #c084fc;
+  color: var(--accent-purple);
   font-weight: 600;
   display: flex;
   align-items: center;
@@ -1445,7 +1445,7 @@ textarea.form-control {
 .tarab-quote {
   font-size: 0.95rem;
   font-weight: 700;
-  color: #fbbf24;
+  color: #d97706;
   background: rgba(245, 158, 11, 0.08);
   border: 1px dashed rgba(245, 158, 11, 0.3);
   padding: 0.6rem 1rem;
@@ -1457,11 +1457,15 @@ textarea.form-control {
   letter-spacing: 0.02em;
 }
 
+[data-theme="dark"] .tarab-quote {
+  color: #fbbf24;
+}
+
 /* Fitness Stat Pill */
 .fitness-stat {
   font-size: 0.85rem;
   font-weight: 700;
-  color: #34d399;
+  color: var(--accent-emerald);
   background: rgba(16, 185, 129, 0.08);
   border: 1px solid rgba(16, 185, 129, 0.2);
   padding: 0.5rem 1rem;
@@ -1469,6 +1473,58 @@ textarea.form-control {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
+}
+
+/* Light Theme Enhancements for Bento Grid */
+[data-theme="light"] .bento-card {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] .bento-card:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .bento-glow {
+  opacity: 0.08;
+}
+
+[data-theme="light"] .icon-cyan {
+  color: #0284c7;
+  background: rgba(2, 132, 199, 0.1);
+  border-color: rgba(2, 132, 199, 0.25);
+}
+
+[data-theme="light"] .bento-category-pill {
+  color: #0284c7;
+  background: rgba(2, 132, 199, 0.1);
+  border-color: rgba(2, 132, 199, 0.25);
+}
+
+[data-theme="light"] .icon-purple,
+[data-theme="light"] .pill-purple,
+[data-theme="light"] .bento-footer-tag {
+  color: #7e22ce;
+  background: rgba(126, 34, 206, 0.08);
+  border-color: rgba(126, 34, 206, 0.2);
+}
+
+[data-theme="light"] .equalizer-bar span {
+  background: #7e22ce;
+}
+
+[data-theme="light"] .icon-amber,
+[data-theme="light"] .pill-amber {
+  color: #b45309;
+  background: rgba(180, 83, 9, 0.08);
+  border-color: rgba(180, 83, 9, 0.2);
+}
+
+[data-theme="light"] .icon-emerald,
+[data-theme="light"] .pill-emerald,
+[data-theme="light"] .fitness-stat {
+  color: #047857;
+  background: rgba(4, 120, 87, 0.08);
+  border-color: rgba(4, 120, 87, 0.2);
 }
 
 /* Mobile Responsiveness for Bento Grid */
