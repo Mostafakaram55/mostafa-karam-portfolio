@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="assets/css/style.css?v=6.0_micro_animations">
+  <link rel="stylesheet" href="assets/css/style.css?v=7.0_enhancements">
 </head>
 <body>
 
@@ -687,18 +687,18 @@
 
         <div class="contact-grid">
           <div class="contact-info-cards">
-            <a href="tel:+201113312766" class="contact-item">
+            <a href="tel:+201113312766" class="contact-item" data-copy="+201113312766" title="Click to copy or call">
               <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
               <div>
-                <div class="contact-label">Phone / WhatsApp</div>
+                <div class="contact-label">Phone / WhatsApp <i class="fa-regular fa-copy" style="font-size: 0.75rem; margin-left: 4px; opacity: 0.7;"></i></div>
                 <div class="contact-val">+20 111 331 2766</div>
               </div>
             </a>
 
-            <a href="mailto:mostafakaram345678@gmail.com" class="contact-item">
+            <a href="mailto:mostafakaram345678@gmail.com" class="contact-item" data-copy="mostafakaram345678@gmail.com" title="Click to copy or send email">
               <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
               <div>
-                <div class="contact-label">Direct Email</div>
+                <div class="contact-label">Direct Email <i class="fa-regular fa-copy" style="font-size: 0.75rem; margin-left: 4px; opacity: 0.7;"></i></div>
                 <div class="contact-val">mostafakaram345678@gmail.com</div>
               </div>
             </a>
@@ -876,6 +876,11 @@
       </div>
     </div>
   </div>
+
+  <!-- Back to Top Floating Button -->
+  <button id="back-to-top" class="back-to-top-btn" aria-label="Back to Top" title="Back to Top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
 
   <!-- Scripts -->
   <script src="assets/js/projects-modal.js"></script>

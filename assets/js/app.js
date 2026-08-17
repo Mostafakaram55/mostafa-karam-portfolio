@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollHighlight();
   initContactForm();
   initScrollReveal();
+  initBackToTop();
+  initCopyFeedback();
 });
 
 /* Theme Toggle System */
@@ -79,10 +81,18 @@ function initSkillsFilter() {
         const cardCategory = card.getAttribute('data-category');
         if (filterCategory === 'all' || cardCategory === filterCategory) {
           card.style.display = 'flex';
-          card.style.opacity = '1';
+          setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'scale(1)';
+          }, 10);
         } else {
-          card.style.display = 'none';
           card.style.opacity = '0';
+          card.style.transform = 'scale(0.95)';
+          setTimeout(() => {
+            if (card.style.opacity === '0') {
+              card.style.display = 'none';
+            }
+          }, 250);
         }
       });
     });
@@ -203,4 +213,46 @@ function initScrollReveal() {
   });
 
   elements.forEach(el => observer.observe(el));
+}
+
+/* Back to Top Floating Button */
+function initBackToTop() {
+  const backToTopBtn = document.getElementById('back-to-top');
+  if (!backToTopBtn) return;
+
+  window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 350) {
+      backToTopBtn.classList.add('visible');
+    } else {
+      backToTopBtn.classList.remove('visible');
+    }
+  });
+
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+}
+
+/* Quick Copy to Clipboard for Contact Info */
+function initCopyFeedback() {
+  const copyableItems = document.querySelectorAll('.contact-item[data-copy]');
+  copyableItems.forEach(item => {
+    item.addEventListener('click', (e) => {
+      const textToCopy = item.getAttribute('data-copy');
+      if (textToCopy && navigator.clipboard) {
+        navigator.clipboard.writeText(textToCopy);
+        const label = item.querySelector('.contact-label');
+        if (label) {
+          const originalText = label.innerText;
+          label.innerHTML = '<span style="color: var(--accent-emerald);"><i class="fa-solid fa-check"></i> Copied to Clipboard!</span>';
+          setTimeout(() => {
+            label.innerText = originalText;
+          }, 2000);
+        }
+      }
+    });
+  });
 }
