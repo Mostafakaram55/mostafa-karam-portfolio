@@ -488,27 +488,34 @@ button {
 
 .avatar-wrapper {
   position: relative;
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  border-radius: 28px;
   padding: 4px;
   background: var(--accent-gradient);
   margin-bottom: 1.5rem;
-  box-shadow: var(--accent-glow);
+  box-shadow: 0 10px 30px rgba(0, 210, 255, 0.3);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.avatar-wrapper:hover {
+  transform: scale(1.05) rotate(1.5deg);
+  box-shadow: 0 15px 35px rgba(0, 210, 255, 0.45);
 }
 
 .avatar-img {
   width: 100%;
   height: 100%;
-  border-radius: 50%;
+  border-radius: 24px;
   object-fit: cover;
   background-color: var(--bg-secondary);
+  display: block;
 }
 
 .avatar-placeholder {
   width: 100%;
   height: 100%;
-  border-radius: 50%;
+  border-radius: 24px;
   background: var(--bg-secondary);
   display: flex;
   align-items: center;
@@ -1226,10 +1233,10 @@ textarea.form-control {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 44px;
-  height: 44px;
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
-  background: rgba(10, 13, 20, 0.65);
+  background: rgba(10, 13, 20, 0.75);
   border: 1px solid var(--border-color);
   color: var(--text-primary);
   display: flex;
@@ -1237,11 +1244,16 @@ textarea.form-control {
   justify-content: center;
   font-size: 1.1rem;
   cursor: pointer;
-  z-index: 10;
+  z-index: 50;
+  pointer-events: auto;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-nav-btn i {
+  pointer-events: none;
 }
 
 [data-theme="light"] .gallery-nav-btn {

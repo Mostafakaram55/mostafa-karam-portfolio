@@ -193,8 +193,24 @@ function updateGalleryState(newIndex, animate = true, direction = 1) {
 
 function initGalleryListeners() {
   const container = document.getElementById('gallery-container');
-  if (!container || container.dataset.listenersAttached) return;
+  const prevBtn = document.getElementById('gallery-prev-btn');
+  const nextBtn = document.getElementById('gallery-next-btn');
 
+  if (prevBtn) {
+    prevBtn.onclick = function(e) {
+      if (e) { e.preventDefault(); e.stopPropagation(); }
+      navigateGallery(-1);
+    };
+  }
+
+  if (nextBtn) {
+    nextBtn.onclick = function(e) {
+      if (e) { e.preventDefault(); e.stopPropagation(); }
+      navigateGallery(1);
+    };
+  }
+
+  if (!container || container.dataset.listenersAttached) return;
   container.dataset.listenersAttached = 'true';
 
   // Touch Swipe Handling
@@ -238,3 +254,9 @@ function closeProjectModal() {
   modal.classList.remove('active');
   document.body.style.overflow = '';
 }
+
+// Global window exposure
+window.openProjectModal = openProjectModal;
+window.closeProjectModal = closeProjectModal;
+window.selectGalleryImage = selectGalleryImage;
+window.navigateGallery = navigateGallery;

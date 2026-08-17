@@ -124,7 +124,7 @@ function initScrollHighlight() {
   });
 }
 
-/* Contact Form Submission to Email */
+/* Contact Form Submission to Email via FormSubmit.co */
 function initContactForm() {
   const form = document.getElementById('contact-form');
   const submitBtn = document.getElementById('form-submit-btn');
@@ -150,28 +150,33 @@ function initContactForm() {
     statusDiv.className = 'form-status';
     statusDiv.style.display = 'none';
 
-    const formData = new FormData(form);
-
     try {
-      const response = await fetch('https://api.web3forms.com/submit', {
+      const response = await fetch('https://formsubmit.co/ajax/mostafakaram345678@gmail.com', {
         method: 'POST',
-        body: formData
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: name,
+          email: email,
+          message: message,
+          _subject: `New Portfolio Message from ${name}`
+        })
       });
 
       const data = await response.json();
 
-      if (response.ok && data.success) {
+      if (response.ok && (data.success === 'true' || data.success === true || data.message)) {
         statusDiv.className = 'form-status success';
         statusDiv.innerHTML = '<i class="fa-solid fa-circle-check"></i> Thank you! Your message has been sent directly to Mostafa\'s email.';
         statusDiv.style.display = 'flex';
         form.reset();
       } else {
-        // Fallback to mailto if API key is not configured or fails
-        triggerMailtoFallback(name, email, message);
+        triggerGmailFallback(name, email, message);
       }
     } catch (err) {
-      // Network fallback to mailto link
-      triggerMailtoFallback(name, email, message);
+      triggerGmailFallback(name, email, message);
     } finally {
       submitBtn.disabled = false;
       btnIcon.className = 'fa-solid fa-paper-plane';
@@ -180,16 +185,13 @@ function initContactForm() {
   });
 }
 
-function triggerMailtoFallback(name, email, message) {
+function triggerGmailFallback(name, email, message) {
   const statusDiv = document.getElementById('form-status');
+  const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=mostafakaram345678@gmail.com&su=${encodeURIComponent('Portfolio Contact from ' + name)}&body=${encodeURIComponent(message + '\n\nSender Email: ' + email)}`;
+  
   statusDiv.className = 'form-status success';
-  statusDiv.innerHTML = '<i class="fa-solid fa-envelope"></i> Opening your email client to send to mostafakaram345678@gmail.com...';
+  statusDiv.innerHTML = `<i class="fa-solid fa-circle-info"></i> <a href="${gmailUrl}" target="_blank" style="color: inherit; text-decoration: underline; font-weight: bold;">Click here to send directly via Gmail</a>`;
   statusDiv.style.display = 'flex';
-
-  const mailtoUrl = `mailto:mostafakaram345678@gmail.com?subject=Portfolio Contact from ${encodeURIComponent(name)}&body=${encodeURIComponent(message + '\n\nSender Email: ' + email)}`;
-  setTimeout(() => {
-    window.location.href = mailtoUrl;
-  }, 500);
 }
 
 /* Scroll Reveal Animations Observer */

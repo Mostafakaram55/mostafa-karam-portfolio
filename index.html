@@ -9,18 +9,35 @@
   <meta name="description" content="Personal portfolio of Mostafa Karam Saeed, a Flutter Developer with 2 years of experience at MDSoft building scalable mobile apps and dashboards using Clean Architecture, Bloc/Cubit, Firebase, and CI/CD.">
   <meta name="keywords" content="Mostafa Karam Saeed, Flutter Developer, Mobile Developer, Dart, Clean Architecture, Bloc, Cubit, Firebase, MDSoft, Egypt Developer, Android, iOS">
   <meta name="author" content="Mostafa Karam Saeed">
+  <link rel="canonical" href="https://mostafa-karam-portfolio-iota.vercel.app/">
 
-  <!-- Open Graph Meta Tags for Link Previews -->
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="assets/images/my_image.jpg">
+  <link rel="apple-touch-icon" href="assets/images/my_image.jpg">
+
+  <!-- Open Graph Meta Tags for Social Link Previews (WhatsApp, Telegram, LinkedIn, Facebook) -->
+  <meta property="og:site_name" content="Mostafa Karam Portfolio">
+  <meta property="og:url" content="https://mostafa-karam-portfolio-iota.vercel.app/">
   <meta property="og:title" content="Mostafa Karam Saeed — Flutter Developer Portfolio">
-  <meta property="og:description" content="2+ years experience building production-grade Flutter mobile apps & dashboards. Published on Google Play & App Store.">
+  <meta property="og:description" content="Flutter Developer with 2+ years of experience building scalable mobile apps & dashboards. Published on Google Play & App Store.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/images/my_image.jpg">
+  <meta property="og:image" content="https://mostafa-karam-portfolio-iota.vercel.app/assets/images/my_image.jpg">
+  <meta property="og:image:secure_url" content="https://mostafa-karam-portfolio-iota.vercel.app/assets/images/my_image.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:alt" content="Mostafa Karam Saeed">
+
+  <!-- Twitter / X Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://mostafa-karam-portfolio-iota.vercel.app/">
+  <meta name="twitter:title" content="Mostafa Karam Saeed — Flutter Developer Portfolio">
+  <meta name="twitter:description" content="Flutter Developer with 2+ years of experience building scalable mobile apps & dashboards. Published on Google Play & App Store.">
+  <meta name="twitter:image" content="https://mostafa-karam-portfolio-iota.vercel.app/assets/images/my_image.jpg">
 
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="assets/css/style.css?v=7.0_enhancements">
+  <link rel="stylesheet" href="assets/css/style.css?v=9.0_squircle_avatar">
 </head>
 <body>
 
@@ -695,10 +712,10 @@
               </div>
             </a>
 
-            <a href="mailto:mostafakaram345678@gmail.com" class="contact-item" data-copy="mostafakaram345678@gmail.com" title="Click to copy or send email">
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=mostafakaram345678@gmail.com" target="_blank" rel="noopener" class="contact-item" data-copy="mostafakaram345678@gmail.com" title="Open in Gmail or Click to Copy">
               <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
               <div>
-                <div class="contact-label">Direct Email <i class="fa-regular fa-copy" style="font-size: 0.75rem; margin-left: 4px; opacity: 0.7;"></i></div>
+                <div class="contact-label">Direct Gmail <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.75rem; margin-left: 4px; opacity: 0.7;"></i></div>
                 <div class="contact-val">mostafakaram345678@gmail.com</div>
               </div>
             </a>
@@ -732,12 +749,11 @@
           <div class="contact-form-card">
             <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1.25rem;">Send a Direct Message</h3>
 
-            <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
-              <!-- Web3Forms Config -->
-              <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY" id="web3forms-key">
-              <input type="hidden" name="subject" value="New Portfolio Contact Message for Mostafa Karam">
-              <input type="hidden" name="from_name" value="Portfolio Contact Form">
-              <input type="hidden" name="to_email" value="mostafakaram345678@gmail.com">
+            <form id="contact-form" action="https://formsubmit.co/ajax/mostafakaram345678@gmail.com" method="POST">
+              <!-- FormSubmit.co Config -->
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_subject" value="New Portfolio Contact Message for Mostafa Karam">
 
               <div class="form-group">
                 <label class="form-label" for="form-name">Your Full Name</label>
@@ -773,7 +789,7 @@
       <div class="social-links">
         <a href="https://github.com/Mostafakaram55" target="_blank" rel="noopener" class="social-icon"><i class="fa-brands fa-github"></i></a>
         <a href="https://www.linkedin.com/in/mostafa-karam-21abbb244" target="_blank" rel="noopener" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
-        <a href="mailto:mostafakaram345678@gmail.com" class="social-icon"><i class="fa-solid fa-envelope"></i></a>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=mostafakaram345678@gmail.com" target="_blank" rel="noopener" class="social-icon" title="Send Email via Gmail"><i class="fa-solid fa-envelope"></i></a>
       </div>
       <div class="footer-copyright">
         © 2026 Mostafa Karam Saeed. Built with passion for Flutter & Clean Code.
@@ -792,13 +808,13 @@
       <div id="modal-project-tech" class="project-tech-tags" style="margin-bottom: 1.5rem;"></div>
 
       <div class="gallery-main-view" id="gallery-container">
-        <button class="gallery-nav-btn prev-btn" id="gallery-prev-btn" onclick="navigateGallery(-1)" aria-label="Previous Screenshot">
+        <button class="gallery-nav-btn prev-btn" id="gallery-prev-btn" onclick="navigateGallery(-1)" aria-label="Previous Screenshot" type="button">
           <i class="fa-solid fa-chevron-left"></i>
         </button>
 
         <img id="gallery-main-img" src="" alt="App Screenshot Gallery" class="gallery-main-img" />
 
-        <button class="gallery-nav-btn next-btn" id="gallery-next-btn" onclick="navigateGallery(1)" aria-label="Next Screenshot">
+        <button class="gallery-nav-btn next-btn" id="gallery-next-btn" onclick="navigateGallery(1)" aria-label="Next Screenshot" type="button">
           <i class="fa-solid fa-chevron-right"></i>
         </button>
 
@@ -883,8 +899,8 @@
   </button>
 
   <!-- Scripts -->
-  <script src="assets/js/projects-modal.js"></script>
-  <script src="assets/js/cv-modal.js"></script>
-  <script src="assets/js/app.js"></script>
+  <script src="assets/js/projects-modal.js?v=3.0_fix"></script>
+  <script src="assets/js/cv-modal.js?v=3.0"></script>
+  <script src="assets/js/app.js?v=4.0_gmail_fix"></script>
 </body>
 </html>
