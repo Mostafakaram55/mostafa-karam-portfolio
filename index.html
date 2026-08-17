@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Title & Meta Tags -->
+  <title>Mostafa Karam Saeed — Flutter Developer Portfolio</title>
+  <meta name="description" content="Personal portfolio of Mostafa Karam Saeed, a Flutter Developer with 2 years of experience at MDSoft building scalable mobile apps and dashboards using Clean Architecture, Bloc/Cubit, Firebase, and CI/CD.">
+  <meta name="keywords" content="Mostafa Karam Saeed, Flutter Developer, Mobile Developer, Dart, Clean Architecture, Bloc, Cubit, Firebase, MDSoft, Egypt Developer, Android, iOS">
+  <meta name="author" content="Mostafa Karam Saeed">
+
+  <!-- Open Graph Meta Tags for Link Previews -->
+  <meta property="og:title" content="Mostafa Karam Saeed — Flutter Developer Portfolio">
+  <meta property="og:description" content="2+ years experience building production-grade Flutter mobile apps & dashboards. Published on Google Play & App Store.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/images/korlen-icon.png">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="container">
+      <a href="#hero" class="nav-brand">
+        <div class="brand-icon">MK</div>
+        <span>Mostafa<span class="gradient-text">.dev</span></span>
+      </a>
+
+      <nav class="nav-links" id="nav-links">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#education" class="nav-link">Education</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" id="theme-toggle" title="Toggle Light/Dark Theme" aria-label="Toggle Theme">
+          <i class="fa-solid fa-sun" id="theme-icon"></i>
+        </button>
+
+        <a href="assets/cv/Mostafa_Karam_CV_ATS.docx" download="Mostafa_Karam_CV_ATS.docx" class="btn btn-sm btn-primary" title="Direct Download ATS Resume">
+          <i class="fa-solid fa-download"></i> Download CV
+        </a>
+
+        <button onclick="openCvModal()" class="btn btn-sm btn-outline" title="Preview Resume Modal">
+          <i class="fa-solid fa-eye"></i> Preview
+        </button>
+
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Mobile Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+      <div class="hero-glow"></div>
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="status-dot"></span> Available for New Opportunities
+          </div>
+
+          <h1 class="hero-name">Mostafa Karam Saeed</h1>
+          <h2 class="hero-title">Flutter Developer | Mobile & Dashboard Applications</h2>
+
+          <p class="hero-description">
+            Flutter Developer with 2 years of professional experience at <strong>MDSoft</strong> building & maintaining production-ready mobile apps and web dashboards. Specialized in <strong>Clean Architecture, Bloc/Cubit, Firebase, and CI/CD pipelines</strong>. Contributed to 5 live production app ecosystems on Google Play and Apple App Store.
+          </p>
+
+          <div class="hero-info-pills">
+            <div class="info-pill"><i class="fa-solid fa-location-dot"></i> Awsim, Giza, Egypt</div>
+            <div class="info-pill"><i class="fa-solid fa-phone"></i> +20 111 331 2766</div>
+            <div class="info-pill"><i class="fa-solid fa-envelope"></i> mostafakaram345678@gmail.com</div>
+          </div>
+
+          <div class="hero-cta">
+            <a href="assets/cv/Mostafa_Karam_CV_ATS.docx" download="Mostafa_Karam_CV_ATS.docx" class="btn btn-primary">
+              <i class="fa-solid fa-download"></i> Download CV (.docx)
+            </a>
+            <a href="assets/cv/Mostafa_Karam_CV_ATS.pdf" download="Mostafa_Karam_CV_ATS.pdf" class="btn btn-secondary">
+              <i class="fa-solid fa-file-pdf"></i> Download CV (.pdf)
+            </a>
+            <button onclick="openCvModal()" class="btn btn-outline">
+              <i class="fa-solid fa-eye"></i> View Resume
+            </button>
+            <a href="#contact" class="btn btn-outline">
+              <i class="fa-solid fa-paper-plane"></i> Contact Me
+            </a>
+          </div>
+
+          <div class="social-links">
+            <a href="https://github.com/Mostafakaram55" target="_blank" rel="noopener" class="social-icon" title="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/mostafa-karam-21abbb244" target="_blank" rel="noopener" class="social-icon" title="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="mailto:mostafakaram345678@gmail.com" class="social-icon" title="Email">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+            <a href="https://wa.me/201113312766" target="_blank" rel="noopener" class="social-icon" title="WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero Card Frame -->
+        <div class="hero-visual">
+          <div class="hero-card-frame">
+            <div class="avatar-wrapper">
+              <div class="avatar-placeholder">MK</div>
+            </div>
+            <h3 class="card-title">Mostafa Karam</h3>
+            <p class="card-subtitle">Senior Flutter Engineer at MDSoft</p>
+
+            <div class="card-stats">
+              <div class="stat-box">
+                <div class="stat-number">5+</div>
+                <div class="stat-label">Live Apps</div>
+              </div>
+              <div class="stat-box">
+                <div class="stat-number">2+</div>
+                <div class="stat-label">Years Exp.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+      <div class="container">
+        <span class="section-tag">About Me</span>
+        <h2 class="section-title">Professional Summary & Core Strengths</h2>
+        <p class="section-subtitle">
+          Passionate cross-platform engineer dedicated to writing clean, maintainable, and scalable Flutter code that powers real-world production businesses.
+        </p>
+
+        <div class="strengths-grid">
+          <div class="strength-card">
+            <div class="strength-icon"><i class="fa-mobile-screen-button"></i></div>
+            <h3 class="strength-title">Cross-Platform Excellence</h3>
+            <p class="strength-desc">
+              Building native-performing mobile applications for iOS and Android using Dart and Flutter, seamlessly handling device hardware, Google Maps SDK, and Bluetooth thermal printers.
+            </p>
+          </div>
+
+          <div class="strength-card">
+            <div class="strength-icon"><i class="fa-sitemap"></i></div>
+            <h3 class="strength-title">Clean Architecture & State</h3>
+            <p class="strength-desc">
+              Structuring robust codebases around Clean Architecture, MVVM, and Bloc/Cubit state management to ensure long-term testability, modularity, and white-label reusability.
+            </p>
+          </div>
+
+          <div class="strength-card">
+            <div class="strength-icon"><i class="fa-bolt"></i></div>
+            <h3 class="strength-title">Real-Time Ecosystems</h3>
+            <p class="strength-desc">
+              Integrating real-time features like live trip tracking via Google Maps, WebSockets live technical chat, and push notifications through Firebase Cloud Messaging (FCM).
+            </p>
+          </div>
+
+          <div class="strength-card">
+            <div class="strength-icon"><i class="fa-gears"></i></div>
+            <h3 class="strength-title">DevOps & Automation</h3>
+            <p class="strength-desc">
+              Configuring CI/CD pipelines via GitHub Actions for automated build verification, versioning, and seamless deployment of APK and AAB binaries.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="section" id="experience">
+      <div class="container">
+        <span class="section-tag">Work History</span>
+        <h2 class="section-title">Professional Experience</h2>
+        <p class="section-subtitle">Full-time software engineering contributions at MDSoft.</p>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="role-title">Flutter Developer</h3>
+                  <div class="company-name">MDSoft</div>
+                </div>
+                <span class="period-badge">2024 — Present</span>
+              </div>
+
+              <ul class="timeline-bullets">
+                <li>Developed and maintained multiple production-grade Flutter mobile applications published on Google Play and the Apple App Store.</li>
+                <li>Built and deployed <strong>KORLEN</strong>, a full-featured e-commerce app, plus 2 white-label clones (HTG and Veron), sharing a common modular codebase with customized branding and store configurations.</li>
+                <li>Developed <strong>Tok Tok Taxi</strong>, a complete delivery and ride-hailing platform with live location tracking, an admin dashboard, and separate customer, driver, and agent applications, featuring internal receipt and Bluetooth printing workflows.</li>
+                <li>Developed <strong>Gb Ghadir</strong>, a full-featured e-commerce app integrated with WhatsApp chat and a custom WebSocket-based live chat for real-time technical support.</li>
+                <li>Developed <strong>VA Note</strong>, a patient management and appointment scheduling app for clinics with Firebase Firestore, FCM reminders, and Clean Architecture.</li>
+                <li>Contributed to <strong>Taxi Beirut</strong> (customer & agent apps), a real-time ride-hailing system with Google Maps tracking, dynamic vehicle pricing, and QR code wallet top-ups.</li>
+                <li>Configured CI/CD pipelines using GitHub Actions for automated APK/AAB builds and deployments.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section" id="projects">
+      <div class="container">
+        <span class="section-tag">Portfolio</span>
+        <h2 class="section-title">Featured Live Production Projects</h2>
+        <p class="section-subtitle">Click on any project to open the interactive screenshot gallery & store links.</p>
+
+        <div class="projects-grid">
+
+          <!-- Project 1: Korlen -->
+          <div class="project-card">
+            <div class="project-banner" onclick="openProjectModal('korlen')">
+              <img src="assets/images/korlen-ss-3.png" alt="Korlen Preview" loading="lazy" />
+              <div class="project-banner-overlay">
+                <img src="assets/images/korlen-icon.png" alt="Korlen Icon" class="project-app-icon" />
+              </div>
+              <span class="view-gallery-badge"><i class="fa-solid fa-images"></i> Screenshots</span>
+            </div>
+
+            <div class="project-body">
+              <h3 class="project-title">KORLEN — E-Commerce App</h3>
+              <p class="project-desc">
+                Full-featured e-commerce app with product catalog, cart, and secure checkout, including 2 white-label clones (HTG & Veron) sharing a common core codebase.
+              </p>
+
+              <div class="project-tech-tags">
+                <span class="tech-tag">Flutter</span>
+                <span class="tech-tag">Dart</span>
+                <span class="tech-tag">Firebase</span>
+                <span class="tech-tag">Bloc/Cubit</span>
+                <span class="tech-tag">Clean Arch</span>
+              </div>
+
+              <div class="project-actions">
+                <button onclick="openProjectModal('korlen')" class="btn btn-sm btn-primary">
+                  <i class="fa-solid fa-circle-info"></i> View Details
+                </button>
+                <a href="https://play.google.com/store/apps/details?id=com.mdsoft.korlen&hl=en" target="_blank" rel="noopener" class="btn btn-sm btn-outline">
+                  <i class="fa-brands fa-google-play"></i> Play Store
+                </a>
+                <a href="https://korlen-test.md-soft.app/" target="_blank" rel="noopener" class="btn btn-sm btn-outline">
+                  <i class="fa-solid fa-gauge"></i> Dashboard
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2: Tok Tok Taxi -->
+          <div class="project-card">
+            <div class="project-banner" onclick="openProjectModal('tok_tok_taxi')">
+              <img src="assets/images/tok_tok_taxi_user-ss-3.png" alt="Tok Tok Taxi Preview" loading="lazy" />
+              <div class="project-banner-overlay">
+                <img src="assets/images/tok_tok_taxi_user-icon.png" alt="Tok Tok Taxi Icon" class="project-app-icon" />
+              </div>
+              <span class="view-gallery-badge"><i class="fa-solid fa-images"></i> Screenshots</span>
+            </div>
+
+            <div class="project-body">
+              <h3 class="project-title">Tok Tok Taxi — Delivery & Ride Platform</h3>
+              <p class="project-desc">
+                Complete delivery & ride-hailing platform featuring Customer, Driver, and Agent apps with live Google Maps tracking, admin dashboard, and Bluetooth thermal receipt printing.
+              </p>
+
+              <div class="project-tech-tags">
+                <span class="tech-tag">Flutter</span>
+                <span class="tech-tag">Google Maps</span>
+                <span class="tech-tag">Receipt Printing</span>
+                <span class="tech-tag">Bloc/Cubit</span>
+              </div>
+
+              <div class="project-actions">
+                <button onclick="openProjectModal('tok_tok_taxi')" class="btn btn-sm btn-primary">
+                  <i class="fa-solid fa-circle-info"></i> View Details
+                </button>
+                <a href="https://play.google.com/store/apps/details?id=com.mdsoft.tok_tok_taxi_user&hl=ar" target="_blank" rel="noopener" class="btn btn-sm btn-outline">
+                  <i class="fa-brands fa-google-play"></i> User App
+                </a>
+                <a href="https://new-toktok-test.md-soft.app/" target="_blank" rel="noopener" class="btn btn-sm btn-outline">
+                  <i class="fa-solid fa-gauge"></i> Dashboard
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3: Gb Ghadir -->
+          <div class="project-card">
+            <div class="project-banner" onclick="openProjectModal('gbghadir')">
+              <img src="assets/images/gbghadir-ss-3.png" alt="Gb Ghadir Preview" loading="lazy" />
+              <div class="project-banner-overlay">
+                <img src="assets/images/gbghadir-icon.png" alt="Gb Ghadir Icon" class="project-app-icon" />
+              </div>
+              <span class="view-gallery-badge"><i class="fa-solid fa-images"></i> Screenshots</span>
+            </div>
+
+            <div class="project-body">
+              <h3 class="project-title">Gb Ghadir — E-Commerce & Live Chat</h3>
+              <p class="project-desc">
+                Full e-commerce platform with catalog browsing, cart, and real-time technical customer support via WhatsApp and a custom WebSocket-based in-app live chat.
+              </p>
+
+              <div class="project-tech-tags">
+                <span class="tech-tag">Flutter</span>
+                <span class="tech-tag">WebSockets</span>
+                <span class="tech-tag">WhatsApp API</span>
+                <span class="tech-tag">Firebase</span>
+              </div>
+
+              <div class="project-actions">
+                <button onclick="openProjectModal('gbghadir')" class="btn btn-sm btn-primary">
+                  <i class="fa-solid fa-circle-info"></i> View Details
+                </button>
+                <a href="https://play.google.com/store/apps/details?id=com.mdsoft.gbghadir&hl=en" target="_blank" rel="noopener" class="btn btn-sm btn-outline">
+                  <i class="fa-brands fa-google-play"></i> Play Store
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4: VA Note -->
+          <div class="project-card">
+            <div class="project-banner" onclick="openProjectModal('vanote')">
+              <img src="assets/images/vanote-ss-3.png" alt="VA Note Preview" loading="lazy" />
+              <div class="project-banner-overlay">
+                <img src="assets/images/vanote-icon.png" alt="VA Note Icon" class="project-app-icon" />
+              </div>
+              <span class="view-gallery-badge"><i class="fa-solid fa-images"></i> Screenshots</span>
+            </div>
+
+            <div class="project-body">
+              <h3 class="project-title">VA Note — Patient & Clinic Management</h3>
+              <p class="project-desc">
+                Patient management and appointment scheduling app for medical clinics. Features visit history, health notes stored in Firestore, and FCM appointment reminders.
+              </p>
+
+              <div class="project-tech-tags">
+                <span class="tech-tag">Flutter</span>
+                <span class="tech-tag">Firestore</span>
+                <span class="tech-tag">FCM Push</span>
+                <span class="tech-tag">MVVM Clean Arch</span>
+              </div>
+
+              <div class="project-actions">
+                <button onclick="openProjectModal('vanote')" class="btn btn-sm btn-primary">
+                  <i class="fa-solid fa-circle-info"></i> View Details
+                </button>
+                <a href="https://play.google.com/store/apps/details?id=com.mdsoft.vanotesclinic" target="_blank" rel="noopener" class="btn btn-sm btn-outline">
+                  <i class="fa-brands fa-google-play"></i> Play Store
+                </a>
+                <a href="https://www.va-note.com/clinic/" target="_blank" rel="noopener" class="btn btn-sm btn-outline">
+                  <i class="fa-solid fa-hospital"></i> Dashboard
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 5: Taxi Beirut -->
+          <div class="project-card">
+            <div class="project-banner" onclick="openProjectModal('taxi_beirut')">
+              <img src="assets/images/taxi_beirut_customer-ss-3.png" alt="Taxi Beirut Preview" loading="lazy" />
+              <div class="project-banner-overlay">
+                <img src="assets/images/taxi_beirut_customer-icon.png" alt="Taxi Beirut Icon" class="project-app-icon" />
+              </div>
+              <span class="view-gallery-badge"><i class="fa-solid fa-images"></i> Screenshots</span>
+            </div>
+
+            <div class="project-body">
+              <h3 class="project-title">Taxi Beirut — Ride-Hailing System</h3>
+              <p class="project-desc">
+                Real-time ride-hailing system on iOS & Android (Customer & Agent apps). Features Google Maps live tracking, dynamic vehicle pricing, and QR code wallet top-up.
+              </p>
+
+              <div class="project-tech-tags">
+                <span class="tech-tag">Flutter</span>
+                <span class="tech-tag">Google Maps</span>
+                <span class="tech-tag">iOS & Android</span>
+                <span class="tech-tag">QR Code Wallet</span>
+              </div>
+
+              <div class="project-actions">
+                <button onclick="openProjectModal('taxi_beirut')" class="btn btn-sm btn-primary">
+                  <i class="fa-solid fa-circle-info"></i> View Details
+                </button>
+                <a href="https://play.google.com/store/apps/details?id=com.taxi.md_soft.taxi_customer_app" target="_blank" rel="noopener" class="btn btn-sm btn-outline">
+                  <i class="fa-brands fa-google-play"></i> Play Store
+                </a>
+                <a href="https://apps.apple.com/eg/app/%D8%AA%D9%83%D8%B3%D9%8A-%D8%A8%D9%8A%D8%B1%D9%88%D8%AA/id6748995437" target="_blank" rel="noopener" class="btn btn-sm btn-outline">
+                  <i class="fa-brands fa-apple"></i> App Store
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section" id="skills">
+      <div class="container">
+        <span class="section-tag">Tech Stack</span>
+        <h2 class="section-title">Skills & Capabilities</h2>
+        <p class="section-subtitle">Categorized technologies and tools utilized in daily development workflows.</p>
+
+        <!-- Category Filters -->
+        <div class="skills-filter">
+          <button class="filter-btn active" data-category="all">All Skills</button>
+          <button class="filter-btn" data-category="mobile">Mobile & Languages</button>
+          <button class="filter-btn" data-category="architecture">State & Architecture</button>
+          <button class="filter-btn" data-category="cloud">Backend & Cloud</button>
+          <button class="filter-btn" data-category="devops">DevOps & Tools</button>
+          <button class="filter-btn" data-category="automation">AI & Automation</button>
+        </div>
+
+        <div class="skills-grid">
+          <!-- Mobile & Languages -->
+          <div class="skill-card" data-category="mobile">
+            <div class="skill-icon"><i class="fa-brands fa-flutter"></i></div>
+            <div>
+              <div class="skill-name">Flutter</div>
+              <div class="skill-cat">Mobile Development</div>
+            </div>
+          </div>
+
+          <div class="skill-card" data-category="mobile">
+            <div class="skill-icon"><i class="fa-solid fa-code"></i></div>
+            <div>
+              <div class="skill-name">Dart</div>
+              <div class="skill-cat">Programming Language</div>
+            </div>
+          </div>
+
+          <div class="skill-card" data-category="mobile">
+            <div class="skill-icon"><i class="fa-solid fa-database"></i></div>
+            <div>
+              <div class="skill-name">SQL</div>
+              <div class="skill-cat">Database Querying</div>
+            </div>
+          </div>
+
+          <div class="skill-card" data-category="mobile">
+            <div class="skill-icon"><i class="fa-solid fa-network-wired"></i></div>
+            <div>
+              <div class="skill-name">RESTful APIs</div>
+              <div class="skill-cat">Networking & Json</div>
+            </div>
+          </div>
+
+          <div class="skill-card" data-category="mobile">
+            <div class="skill-icon"><i class="fa-solid fa-plug"></i></div>
+            <div>
+              <div class="skill-name">WebSockets</div>
+              <div class="skill-cat">Real-time Data Stream</div>
+            </div>
+          </div>
+
+          <div class="skill-card" data-category="mobile">
+            <div class="skill-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+            <div>
+              <div class="skill-name">Google Maps SDK</div>
+              <div class="skill-cat">Location & GPS</div>
+            </div>
+          </div>
+
+          <!-- State & Architecture -->
+          <div class="skill-card" data-category="architecture">
+            <div class="skill-icon"><i class="fa-solid fa-cubes"></i></div>
+            <div>
+              <div class="skill-name">Bloc & Cubit</div>
+              <div class="skill-cat">State Management</div>
+            </div>
+          </div>
+
+          <div class="skill-card" data-category="architecture">
+            <div class="skill-icon"><i class="fa-solid fa-diagram-project"></i></div>
+            <div>
+              <div class="skill-name">Clean Architecture</div>
+              <div class="skill-cat">Design Pattern</div>
+            </div>
+          </div>
+
+          <div class="skill-card" data-category="architecture">
+            <div class="skill-icon"><i class="fa-solid fa-layer-group"></i></div>
+            <div>
+              <div class="skill-name">MVVM Pattern</div>
+              <div class="skill-cat">Model-View-ViewModel</div>
+            </div>
+          </div>
+
+          <div class="skill-card" data-category="architecture">
+            <div class="skill-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
+            <div>
+              <div class="skill-name">GetIt & Injectable</div>
+              <div class="skill-cat">Dependency Injection</div>
+            </div>
+          </div>
+
+          <!-- Cloud & Backend -->
+          <div class="skill-card" data-category="cloud">
+            <div class="skill-icon"><i class="fa-solid fa-fire"></i></div>
+            <div>
+              <div class="skill-name">Firebase Auth</div>
+              <div class="skill-cat">Authentication & Security</div>
+            </div>
+          </div>
+
+          <div class="skill-card" data-category="cloud">
+            <div class="skill-icon"><i class="fa-solid fa-cloud"></i></div>
+            <div>
+              <div class="skill-name">Firestore</div>
+              <div class="skill-cat">Cloud NoSQL DB</div>
+            </div>
+          </div>
+
+          <div class="skill-card" data-category="cloud">
+            <div class="skill-icon"><i class="fa-solid fa-bell"></i></div>
+            <div>
+              <div class="skill-name">Firebase FCM</div>
+              <div class="skill-cat">Push Notifications</div>
+            </div>
+          </div>
+
+          <!-- DevOps & Tools -->
+          <div class="skill-card" data-category="devops">
+            <div class="skill-icon"><i class="fa-brands fa-github"></i></div>
+            <div>
+              <div class="skill-name">GitHub Actions</div>
+              <div class="skill-cat">CI/CD Automation</div>
+            </div>
+          </div>
+
+          <div class="skill-card" data-category="devops">
+            <div class="skill-icon"><i class="fa-solid fa-gear"></i></div>
+            <div>
+              <div class="skill-name">Gradle & Info.plist</div>
+              <div class="skill-cat">Build Configuration</div>
+            </div>
+          </div>
+
+          <div class="skill-card" data-category="devops">
+            <div class="skill-icon"><i class="fa-solid fa-paper-plane"></i></div>
+            <div>
+              <div class="skill-name">Postman</div>
+              <div class="skill-cat">API Testing</div>
+            </div>
+          </div>
+
+          <div class="skill-card" data-category="devops">
+            <div class="skill-icon"><i class="fa-brands fa-git-alt"></i></div>
+            <div>
+              <div class="skill-name">Git</div>
+              <div class="skill-cat">Version Control</div>
+            </div>
+          </div>
+
+          <!-- AI & Automation -->
+          <div class="skill-card" data-category="automation">
+            <div class="skill-icon"><i class="fa-solid fa-robot"></i></div>
+            <div>
+              <div class="skill-name">AI Automation</div>
+              <div class="skill-cat">Workflow Integration</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="section" id="education">
+      <div class="container">
+        <span class="section-tag">Background</span>
+        <h2 class="section-title">Education</h2>
+        <p class="section-subtitle">Academic qualifications and foundation.</p>
+
+        <div class="edu-card">
+          <div class="edu-icon">
+            <i class="fa-solid fa-graduation-cap"></i>
+          </div>
+          <div>
+            <h3 class="edu-degree">Bachelor's Degree</h3>
+            <div class="edu-institution">Tiba Academy for Science and Technology</div>
+            <div class="edu-year">Graduated 2023</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+      <div class="container">
+        <span class="section-tag">Get in Touch</span>
+        <h2 class="section-title">Contact & Communication</h2>
+        <p class="section-subtitle">Feel free to reach out for career opportunities, freelance projects, or technical collaboration.</p>
+
+        <div class="contact-grid">
+          <div class="contact-info-cards">
+            <a href="tel:+201113312766" class="contact-item">
+              <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+              <div>
+                <div class="contact-label">Phone / WhatsApp</div>
+                <div class="contact-val">+20 111 331 2766</div>
+              </div>
+            </a>
+
+            <a href="mailto:mostafakaram345678@gmail.com" class="contact-item">
+              <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+              <div>
+                <div class="contact-label">Direct Email</div>
+                <div class="contact-val">mostafakaram345678@gmail.com</div>
+              </div>
+            </a>
+
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+              <div>
+                <div class="contact-label">Location</div>
+                <div class="contact-val">Awsim, Giza, Egypt</div>
+              </div>
+            </div>
+
+            <a href="https://github.com/Mostafakaram55" target="_blank" rel="noopener" class="contact-item">
+              <div class="contact-icon"><i class="fa-brands fa-github"></i></div>
+              <div>
+                <div class="contact-label">GitHub Repository</div>
+                <div class="contact-val">github.com/Mostafakaram55</div>
+              </div>
+            </a>
+
+            <a href="https://www.linkedin.com/in/mostafa-karam-21abbb244" target="_blank" rel="noopener" class="contact-item">
+              <div class="contact-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+              <div>
+                <div class="contact-label">LinkedIn Profile</div>
+                <div class="contact-val">linkedin.com/in/mostafa-karam-21abbb244</div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="contact-form-card">
+            <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1.25rem;">Send a Direct Message</h3>
+
+            <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+              <!-- Web3Forms Config -->
+              <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY" id="web3forms-key">
+              <input type="hidden" name="subject" value="New Portfolio Contact Message for Mostafa Karam">
+              <input type="hidden" name="from_name" value="Portfolio Contact Form">
+              <input type="hidden" name="to_email" value="mostafakaram345678@gmail.com">
+
+              <div class="form-group">
+                <label class="form-label" for="form-name">Your Full Name</label>
+                <input type="text" name="name" id="form-name" class="form-control" placeholder="e.g. John Doe" required />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="form-email">Email Address</label>
+                <input type="email" name="email" id="form-email" class="form-control" placeholder="name@company.com" required />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="form-message">Message / Opportunity Details</label>
+                <textarea name="message" id="form-message" class="form-control" placeholder="Hello Mostafa, I would like to discuss..." required></textarea>
+              </div>
+
+              <button type="submit" id="form-submit-btn" class="btn btn-primary" style="width: 100%;">
+                <i class="fa-solid fa-paper-plane" id="submit-btn-icon"></i> <span id="submit-btn-text">Send Message to Email</span>
+              </button>
+
+              <div id="form-status" class="form-status"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="social-links">
+        <a href="https://github.com/Mostafakaram55" target="_blank" rel="noopener" class="social-icon"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/mostafa-karam-21abbb244" target="_blank" rel="noopener" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="mailto:mostafakaram345678@gmail.com" class="social-icon"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+      <div class="footer-copyright">
+        © 2026 Mostafa Karam Saeed. Built with passion for Flutter & Clean Code.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Project Screenshots Lightbox Modal -->
+  <div class="modal-overlay" id="project-modal">
+    <div class="modal-container">
+      <button class="modal-close-btn" onclick="closeProjectModal()" aria-label="Close Modal">&times;</button>
+      
+      <h3 id="modal-project-title" style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.75rem;"></h3>
+      <p id="modal-project-desc" style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1.25rem;"></p>
+
+      <div id="modal-project-tech" class="project-tech-tags" style="margin-bottom: 1.5rem;"></div>
+
+      <div class="gallery-main-view">
+        <img id="gallery-main-img" src="" alt="App Screenshot Gallery" />
+      </div>
+
+      <div class="gallery-thumbs" id="gallery-thumbs"></div>
+
+      <div id="modal-project-links" class="project-actions" style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border-color);"></div>
+    </div>
+  </div>
+
+  <!-- ATS CV Viewer Modal -->
+  <div class="modal-overlay" id="cv-modal">
+    <div class="modal-container" style="max-width: 800px;">
+      <button class="modal-close-btn" onclick="closeCvModal()" aria-label="Close Modal">&times;</button>
+      
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+        <h3 style="font-size: 1.4rem; font-weight: 800;"><i class="fa-solid fa-file-contract"></i> Curriculum Vitae (ATS Format)</h3>
+        <div style="display: flex; gap: 0.5rem;">
+          <a href="assets/cv/Mostafa_Karam_CV_ATS.docx" download="Mostafa_Karam_CV_ATS.docx" class="btn btn-sm btn-primary">
+            <i class="fa-solid fa-download"></i> Download .docx
+          </a>
+          <a href="assets/cv/Mostafa_Karam_CV_ATS.pdf" download="Mostafa_Karam_CV_ATS.pdf" class="btn btn-sm btn-secondary">
+            <i class="fa-solid fa-file-pdf"></i> Download .pdf
+          </a>
+        </div>
+      </div>
+
+      <div class="cv-preview-body">
+        <div class="cv-header">
+          <h2 style="font-size: 1.75rem; font-weight: 800;">Mostafa Karam Saeed</h2>
+          <div style="font-weight: 600; color: var(--accent-cyan);">Flutter Developer | Mobile & Dashboard Applications | Clean Architecture</div>
+          <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">
+            Awsim, Giza, Egypt | +20 111 331 2766 | mostafakaram345678@gmail.com
+          </div>
+          <div style="font-size: 0.85rem; margin-top: 0.25rem;">
+            <a href="https://github.com/Mostafakaram55" target="_blank" style="color: var(--accent-cyan);">GitHub: Mostafakaram55</a> · 
+            <a href="https://www.linkedin.com/in/mostafa-karam-21abbb244" target="_blank" style="color: var(--accent-cyan);">LinkedIn: mostafa-karam-21abbb244</a>
+          </div>
+        </div>
+
+        <div class="cv-section-h">Professional Summary</div>
+        <p>
+          Flutter Developer with 2 years of professional experience at MDSoft, developing and maintaining production-ready mobile and dashboard applications. Experienced in building scalable Flutter applications using Dart, Clean Architecture, Bloc/Cubit, REST APIs, Firebase, and modern development practices. Contributed to 5 live production projects, including mobile applications published on Google Play and the Apple App Store, along with web-based dashboards. Also familiar with AI Automation and integrating automation concepts into modern software development workflows.
+        </p>
+
+        <div class="cv-section-h">Professional Experience</div>
+        <div style="font-weight: 700; display: flex; justify-content: space-between;">
+          <span>Flutter Developer — MDSoft</span>
+          <span>2024 – Present</span>
+        </div>
+        <ul style="padding-left: 1.25rem; margin-top: 0.5rem; display: flex; flex-direction: column; gap: 0.4rem;">
+          <li>Developed and maintained multiple production-grade Flutter mobile applications published on Google Play and the Apple App Store.</li>
+          <li>Built and deployed KORLEN, a full-featured e-commerce app, along with 2 white-label clones (HTG and Veron), sharing a common codebase with customised branding and configuration.</li>
+          <li>Developed Tok Tok Taxi, a complete delivery and ride-hailing platform with live location tracking, an admin dashboard, and separate user, driver, and agent applications, including Bluetooth receipt printing and internal printing support.</li>
+          <li>Developed Gb Ghadir, a full-featured e-commerce app integrated with WhatsApp chat and a custom WebSocket-based live chat for real-time technical support.</li>
+          <li>Developed VA Note, a patient management and appointment scheduling app with Firebase Firestore, FCM reminders, and MVVM Clean Architecture.</li>
+          <li>Contributed to Taxi Beirut (customer & agent apps), a real-time ride-hailing system with live location tracking, Google Maps, and QR wallet top-up.</li>
+          <li>Configured CI/CD pipelines using GitHub Actions for automated APK/AAB builds and deployments.</li>
+        </ul>
+
+        <div class="cv-section-h">Core Skills</div>
+        <ul style="padding-left: 1.25rem; display: flex; flex-direction: column; gap: 0.35rem;">
+          <li><strong>Programming Languages:</strong> Dart, SQL</li>
+          <li><strong>Mobile Development:</strong> Flutter, RESTful APIs, WebSockets, Google Maps SDK</li>
+          <li><strong>Backend & Cloud:</strong> Firebase (Authentication, Firestore, Cloud Messaging)</li>
+          <li><strong>State Management:</strong> Bloc, Cubit, Provider</li>
+          <li><strong>Architecture:</strong> Clean Architecture, MVVM, Repository Pattern, Dependency Injection (GetIt, Injectable)</li>
+          <li><strong>DevOps & Tools:</strong> CI/CD Pipelines, GitHub Actions, Version Automation, Gradle, Info.plist, VS Code, Android Studio, Git, Postman</li>
+          <li><strong>Automation:</strong> AI Automation, integrating automation workflows into modern software development</li>
+        </ul>
+
+        <div class="cv-section-h">Education</div>
+        <div><strong>Bachelor's Degree</strong> — Tiba Academy for Science and Technology (Graduated 2023)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/projects-modal.js"></script>
+  <script src="assets/js/cv-modal.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

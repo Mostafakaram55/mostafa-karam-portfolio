@@ -1,0 +1,21 @@
+{
+  "name": "mostafa-karam-portfolio",
+  "version": "1.0.0",
+  "description": "Personal portfolio website for Mostafa Karam Saeed — Flutter Developer",
+  "main": "index.html",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "start": "npx http-server dist -p 8080"
+  },
+  "keywords": [
+    "portfolio",
+    "flutter",
+    "developer",
+    "mostafa-karam"
+  ],
+  "author": "Mostafa Karam Saeed",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
