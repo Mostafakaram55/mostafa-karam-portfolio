@@ -1477,11 +1477,29 @@ textarea.form-control {
 
 /* Light Theme Enhancements for Bento Grid */
 [data-theme="light"] .bento-card {
+  background: #ffffff !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
 }
 
 [data-theme="light"] .bento-card:hover {
+  background: #ffffff !important;
+  border-color: rgba(2, 132, 199, 0.3) !important;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .bento-title {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .bento-desc {
+  color: #475569 !important;
+}
+
+[data-theme="light"] .chip {
+  background: #f1f5f9 !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  color: #0f172a !important;
 }
 
 [data-theme="light"] .bento-glow {
