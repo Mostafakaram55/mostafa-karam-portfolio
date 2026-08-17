@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="assets/css/style.css?v=3.0_bento_fix">
+  <link rel="stylesheet" href="assets/css/style.css?v=6.0_micro_animations">
 </head>
 <body>
 
@@ -47,7 +47,7 @@
           <i class="fa-solid fa-sun" id="theme-icon"></i>
         </button>
 
-        <a href="assets/cv/Mostafa_Karam_CV_ATS.docx" download="Mostafa_Karam_CV_ATS.docx" class="btn btn-sm btn-primary" title="Direct Download ATS Resume">
+        <a href="assets/cv/Mostafa_Karam_update_CV.docx" download="Mostafa_Karam_update_CV.docx" class="btn btn-sm btn-primary" title="Direct Download ATS Resume">
           <i class="fa-solid fa-download"></i> Download CV
         </a>
 
@@ -78,7 +78,7 @@
           <h2 class="hero-title">Flutter Developer | Mobile & Dashboard Applications</h2>
 
           <p class="hero-description">
-            Flutter Developer with 2 years of professional experience at <strong>MDSoft</strong> building & maintaining production-ready mobile apps and web dashboards. Specialized in <strong>Clean Architecture, Bloc/Cubit, Firebase, and CI/CD pipelines</strong>. Contributed to 5 live production app ecosystems on Google Play and Apple App Store.
+            Flutter Developer with 2 years of professional experience at <strong>MDSoft</strong> building & maintaining production-ready mobile apps and web dashboards. Specialized in <strong>Clean Architecture, Bloc/Cubit, Firebase, and CI/CD pipelines</strong>. Contributed to 4 live production app ecosystems on Google Play and Apple App Store.
           </p>
 
           <div class="hero-info-pills">
@@ -88,10 +88,10 @@
           </div>
 
           <div class="hero-cta">
-            <a href="assets/cv/Mostafa_Karam_CV_ATS.docx" download="Mostafa_Karam_CV_ATS.docx" class="btn btn-primary">
+            <a href="assets/cv/Mostafa_Karam_update_CV.docx" download="Mostafa_Karam_update_CV.docx" class="btn btn-primary">
               <i class="fa-solid fa-download"></i> Download CV (.docx)
             </a>
-            <a href="assets/cv/Mostafa_Karam_CV_ATS.pdf" download="Mostafa_Karam_CV_ATS.pdf" class="btn btn-secondary">
+            <a href="assets/cv/Mostafa_Karam_update_CV.pdf" download="Mostafa_Karam_update_CV.pdf" class="btn btn-secondary">
               <i class="fa-solid fa-file-pdf"></i> Download CV (.pdf)
             </a>
             <button onclick="openCvModal()" class="btn btn-outline">
@@ -129,7 +129,7 @@
 
             <div class="card-stats">
               <div class="stat-box">
-                <div class="stat-number">5+</div>
+                <div class="stat-number">4+</div>
                 <div class="stat-label">Live Apps</div>
               </div>
               <div class="stat-box">
@@ -212,7 +212,6 @@
                 <li>Developed <strong>Tok Tok Taxi</strong>, a complete delivery and ride-hailing platform with live location tracking, an admin dashboard, and separate customer, driver, and agent applications, featuring internal receipt and Bluetooth printing workflows.</li>
                 <li>Developed <strong>Gb Ghadir</strong>, a full-featured e-commerce app integrated with WhatsApp chat and a custom WebSocket-based live chat for real-time technical support.</li>
                 <li>Developed <strong>VA Note</strong>, a patient management and appointment scheduling app for clinics with Firebase Firestore, FCM reminders, and Clean Architecture.</li>
-                <li>Contributed to <strong>Taxi Beirut</strong> (customer & agent apps), a real-time ride-hailing system with Google Maps tracking, dynamic vehicle pricing, and QR code wallet top-ups.</li>
                 <li>Configured CI/CD pipelines using GitHub Actions for automated APK/AAB builds and deployments.</li>
               </ul>
             </div>
@@ -260,6 +259,9 @@
                 </button>
                 <a href="https://play.google.com/store/apps/details?id=com.mdsoft.korlen&hl=en" target="_blank" rel="noopener" class="btn btn-sm btn-outline">
                   <i class="fa-brands fa-google-play"></i> Play Store
+                </a>
+                <a href="https://apps.apple.com/eg/app/%D9%83%D9%88%D8%B1%D9%84%D9%86/id6758906505" target="_blank" rel="noopener" class="btn btn-sm btn-outline">
+                  <i class="fa-brands fa-apple"></i> App Store
                 </a>
                 <a href="https://korlen-test.md-soft.app/" target="_blank" rel="noopener" class="btn btn-sm btn-outline">
                   <i class="fa-solid fa-gauge"></i> Dashboard
@@ -376,42 +378,7 @@
             </div>
           </div>
 
-          <!-- Project 5: Taxi Beirut -->
-          <div class="project-card">
-            <div class="project-banner" onclick="openProjectModal('taxi_beirut')">
-              <img src="assets/images/taxi_beirut_customer-ss-3.png" alt="Taxi Beirut Preview" loading="lazy" />
-              <div class="project-banner-overlay">
-                <img src="assets/images/taxi_beirut_customer-icon.png" alt="Taxi Beirut Icon" class="project-app-icon" />
-              </div>
-              <span class="view-gallery-badge"><i class="fa-solid fa-images"></i> Screenshots</span>
-            </div>
 
-            <div class="project-body">
-              <h3 class="project-title">Taxi Beirut — Ride-Hailing System</h3>
-              <p class="project-desc">
-                Real-time ride-hailing system on iOS & Android (Customer & Agent apps). Features Google Maps live tracking, dynamic vehicle pricing, and QR code wallet top-up.
-              </p>
-
-              <div class="project-tech-tags">
-                <span class="tech-tag">Flutter</span>
-                <span class="tech-tag">Google Maps</span>
-                <span class="tech-tag">iOS & Android</span>
-                <span class="tech-tag">QR Code Wallet</span>
-              </div>
-
-              <div class="project-actions">
-                <button onclick="openProjectModal('taxi_beirut')" class="btn btn-sm btn-primary">
-                  <i class="fa-solid fa-circle-info"></i> View Details
-                </button>
-                <a href="https://play.google.com/store/apps/details?id=com.taxi.md_soft.taxi_customer_app" target="_blank" rel="noopener" class="btn btn-sm btn-outline">
-                  <i class="fa-brands fa-google-play"></i> Play Store
-                </a>
-                <a href="https://apps.apple.com/eg/app/%D8%AA%D9%83%D8%B3%D9%8A-%D8%A8%D9%8A%D8%B1%D9%88%D8%AA/id6748995437" target="_blank" rel="noopener" class="btn btn-sm btn-outline">
-                  <i class="fa-brands fa-apple"></i> App Store
-                </a>
-              </div>
-            </div>
-          </div>
 
         </div>
       </div>
@@ -824,8 +791,18 @@
 
       <div id="modal-project-tech" class="project-tech-tags" style="margin-bottom: 1.5rem;"></div>
 
-      <div class="gallery-main-view">
-        <img id="gallery-main-img" src="" alt="App Screenshot Gallery" />
+      <div class="gallery-main-view" id="gallery-container">
+        <button class="gallery-nav-btn prev-btn" id="gallery-prev-btn" onclick="navigateGallery(-1)" aria-label="Previous Screenshot">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <img id="gallery-main-img" src="" alt="App Screenshot Gallery" class="gallery-main-img" />
+
+        <button class="gallery-nav-btn next-btn" id="gallery-next-btn" onclick="navigateGallery(1)" aria-label="Next Screenshot">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <div class="gallery-counter" id="gallery-counter">1 / 1</div>
       </div>
 
       <div class="gallery-thumbs" id="gallery-thumbs"></div>
@@ -842,10 +819,10 @@
       <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
         <h3 style="font-size: 1.4rem; font-weight: 800;"><i class="fa-solid fa-file-contract"></i> Curriculum Vitae (ATS Format)</h3>
         <div style="display: flex; gap: 0.5rem;">
-          <a href="assets/cv/Mostafa_Karam_CV_ATS.docx" download="Mostafa_Karam_CV_ATS.docx" class="btn btn-sm btn-primary">
+          <a href="assets/cv/Mostafa_Karam_update_CV.docx" download="Mostafa_Karam_update_CV.docx" class="btn btn-sm btn-primary">
             <i class="fa-solid fa-download"></i> Download .docx
           </a>
-          <a href="assets/cv/Mostafa_Karam_CV_ATS.pdf" download="Mostafa_Karam_CV_ATS.pdf" class="btn btn-sm btn-secondary">
+          <a href="assets/cv/Mostafa_Karam_update_CV.pdf" download="Mostafa_Karam_update_CV.pdf" class="btn btn-sm btn-secondary">
             <i class="fa-solid fa-file-pdf"></i> Download .pdf
           </a>
         </div>
@@ -866,7 +843,7 @@
 
         <div class="cv-section-h">Professional Summary</div>
         <p>
-          Flutter Developer with 2 years of professional experience at MDSoft, developing and maintaining production-ready mobile and dashboard applications. Experienced in building scalable Flutter applications using Dart, Clean Architecture, Bloc/Cubit, REST APIs, Firebase, and modern development practices. Contributed to 5 live production projects, including mobile applications published on Google Play and the Apple App Store, along with web-based dashboards. Also familiar with AI Automation and integrating automation concepts into modern software development workflows.
+          Flutter Developer with 2 years of professional experience at MDSoft, developing and maintaining production-ready mobile and dashboard applications. Experienced in building scalable Flutter applications using Dart, Clean Architecture, Bloc/Cubit, REST APIs, Firebase, and modern development practices. Contributed to 4 live production projects, including mobile applications published on Google Play and the Apple App Store, along with web-based dashboards. Also familiar with AI Automation and integrating automation concepts into modern software development workflows.
         </p>
 
         <div class="cv-section-h">Professional Experience</div>
@@ -880,7 +857,6 @@
           <li>Developed Tok Tok Taxi, a complete delivery and ride-hailing platform with live location tracking, an admin dashboard, and separate user, driver, and agent applications, including Bluetooth receipt printing and internal printing support.</li>
           <li>Developed Gb Ghadir, a full-featured e-commerce app integrated with WhatsApp chat and a custom WebSocket-based live chat for real-time technical support.</li>
           <li>Developed VA Note, a patient management and appointment scheduling app with Firebase Firestore, FCM reminders, and MVVM Clean Architecture.</li>
-          <li>Contributed to Taxi Beirut (customer & agent apps), a real-time ride-hailing system with live location tracking, Google Maps, and QR wallet top-up.</li>
           <li>Configured CI/CD pipelines using GitHub Actions for automated APK/AAB builds and deployments.</li>
         </ul>
 

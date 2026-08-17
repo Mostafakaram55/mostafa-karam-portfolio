@@ -9,6 +9,7 @@ const projectsData = {
     tech: ["Flutter", "Dart", "Firebase Auth", "Firestore", "FCM Push", "REST APIs", "Bloc/Cubit", "Clean Architecture", "MVVM"],
     description: "Full-featured e-commerce ecosystem including product catalog browsing, dynamic search & filtering, cart management, and multi-step secure checkout. Features 2 white-label clones (HTG and Veron) built on a shared modular architecture with customized theme assets and store configurations. Real-time order updates and targeted push notifications powered by FCM.",
     playStore: "https://play.google.com/store/apps/details?id=com.mdsoft.korlen&hl=en",
+    appStore: "https://apps.apple.com/eg/app/%D9%83%D9%88%D8%B1%D9%84%D9%86/id6758906505",
     dashboard: "https://korlen-test.md-soft.app/",
     icon: "assets/images/korlen-icon.png",
     screenshots: [
@@ -58,27 +59,13 @@ const projectsData = {
       "assets/images/vanote-ss-3.png",
       "assets/images/vanote-ss-4.png"
     ]
-  },
-  taxi_beirut: {
-    title: "Taxi Beirut — Ride-Hailing System (Customer & Agent Apps)",
-    tech: ["Flutter", "Dart", "Google Maps SDK", "Firebase Auth", "Firestore", "QR Wallet Top-Up", "iOS & Android", "Clean Architecture"],
-    description: "Live ride-hailing system deployed on both Google Play Store and Apple App Store for customer and agent applications. Features real-time pickup/destination route selection with Google Maps, dynamic pricing calculation by vehicle class, agent wallet management, QR code top-up transactions, and FCM alerts.",
-    playStoreCustomer: "https://play.google.com/store/apps/details?id=com.taxi.md_soft.taxi_customer_app",
-    appStoreCustomer: "https://apps.apple.com/eg/app/%D8%AA%D9%83%D8%B3%D9%8A-%D8%A8%D9%8A%D8%B1%D9%88%D8%AA/id6748995437",
-    playStoreAgent: "https://play.google.com/store/apps/details?id=com.mdsoft.taxibeirutagent",
-    appStoreAgent: "https://apps.apple.com/eg/app/taxi-beirut-agent/id6760011080",
-    icon: "assets/images/taxi_beirut_customer-icon.png",
-    screenshots: [
-      "assets/images/taxi_beirut_customer-ss-2.png",
-      "assets/images/taxi_beirut_customer-ss-3.png",
-      "assets/images/taxi_beirut_customer-ss-4.png",
-      "assets/images/taxi_beirut_agent-ss-3.png"
-    ]
   }
 };
 
 let currentModalProjectKey = null;
 let currentShotIndex = 0;
+let touchStartX = 0;
+let touchEndX = 0;
 
 function openProjectModal(projectKey) {
   const data = projectsData[projectKey];
@@ -92,7 +79,6 @@ function openProjectModal(projectKey) {
   const descEl = document.getElementById('modal-project-desc');
   const techEl = document.getElementById('modal-project-tech');
   const linksEl = document.getElementById('modal-project-links');
-  const mainImgEl = document.getElementById('gallery-main-img');
   const thumbsContainer = document.getElementById('gallery-thumbs');
 
   titleEl.innerText = data.title;
@@ -106,6 +92,9 @@ function openProjectModal(projectKey) {
   if (data.playStore) {
     linksHtml += `<a href="${data.playStore}" target="_blank" rel="noopener" class="btn btn-sm btn-primary"><i class="fa-brands fa-google-play"></i> Play Store</a>`;
   }
+  if (data.appStore) {
+    linksHtml += `<a href="${data.appStore}" target="_blank" rel="noopener" class="btn btn-sm btn-secondary"><i class="fa-brands fa-apple"></i> App Store</a>`;
+  }
   if (data.playStoreUser) {
     linksHtml += `<a href="${data.playStoreUser}" target="_blank" rel="noopener" class="btn btn-sm btn-primary"><i class="fa-brands fa-google-play"></i> User App</a>`;
   }
@@ -115,42 +104,133 @@ function openProjectModal(projectKey) {
   if (data.playStoreAgent) {
     linksHtml += `<a href="${data.playStoreAgent}" target="_blank" rel="noopener" class="btn btn-sm btn-outline"><i class="fa-brands fa-google-play"></i> Agent App</a>`;
   }
-  if (data.playStoreCustomer) {
-    linksHtml += `<a href="${data.playStoreCustomer}" target="_blank" rel="noopener" class="btn btn-sm btn-primary"><i class="fa-brands fa-google-play"></i> Customer (Android)</a>`;
-  }
-  if (data.appStoreCustomer) {
-    linksHtml += `<a href="${data.appStoreCustomer}" target="_blank" rel="noopener" class="btn btn-sm btn-secondary"><i class="fa-brands fa-apple"></i> Customer (iOS)</a>`;
-  }
   if (data.dashboard) {
     linksHtml += `<a href="${data.dashboard}" target="_blank" rel="noopener" class="btn btn-sm btn-secondary"><i class="fa-solid fa-gauge-high"></i> Dashboard</a>`;
   }
 
   linksEl.innerHTML = linksHtml;
 
-  // Render Gallery
-  mainImgEl.src = data.screenshots[0];
+  // Render Gallery Thumbnails
   thumbsContainer.innerHTML = data.screenshots.map((imgSrc, idx) => `
     <div class="thumb-item ${idx === 0 ? 'active' : ''}" onclick="selectGalleryImage(${idx})">
       <img src="${imgSrc}" alt="Thumbnail ${idx + 1}" />
     </div>
   `).join('');
 
+  // Preload Images in Background
+  data.screenshots.forEach(src => {
+    const img = new Image();
+    img.src = src;
+  });
+
+  updateGalleryState(0, false);
+
   modal.classList.add('active');
   document.body.style.overflow = 'hidden';
+
+  initGalleryListeners();
 }
 
 function selectGalleryImage(idx) {
+  if (idx === currentShotIndex) return;
   const data = projectsData[currentModalProjectKey];
   if (!data || !data.screenshots[idx]) return;
 
-  currentShotIndex = idx;
-  document.getElementById('gallery-main-img').src = data.screenshots[idx];
+  const direction = idx > currentShotIndex ? 1 : -1;
+  updateGalleryState(idx, true, direction);
+}
 
+function navigateGallery(direction) {
+  const data = projectsData[currentModalProjectKey];
+  if (!data || !data.screenshots) return;
+
+  let newIndex = currentShotIndex + direction;
+  if (newIndex < 0) newIndex = data.screenshots.length - 1;
+  if (newIndex >= data.screenshots.length) newIndex = 0;
+
+  updateGalleryState(newIndex, true, direction);
+}
+
+function updateGalleryState(newIndex, animate = true, direction = 1) {
+  const data = projectsData[currentModalProjectKey];
+  if (!data || !data.screenshots[newIndex]) return;
+
+  currentShotIndex = newIndex;
+  const mainImgEl = document.getElementById('gallery-main-img');
+  const counterEl = document.getElementById('gallery-counter');
+
+  if (counterEl) {
+    counterEl.innerText = `${newIndex + 1} / ${data.screenshots.length}`;
+  }
+
+  // Active thumb update
   const thumbs = document.querySelectorAll('#gallery-thumbs .thumb-item');
   thumbs.forEach((t, i) => {
-    if (i === idx) t.classList.add('active');
-    else t.classList.remove('active');
+    if (i === newIndex) {
+      t.classList.add('active');
+      t.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    } else {
+      t.classList.remove('active');
+    }
   });
+
+  if (animate && mainImgEl) {
+    mainImgEl.classList.remove('gallery-img-slide-left', 'gallery-img-slide-right');
+    
+    // Trigger reflow
+    void mainImgEl.offsetWidth;
+
+    const animClass = direction > 0 ? 'gallery-img-slide-right' : 'gallery-img-slide-left';
+    mainImgEl.classList.add(animClass);
+
+    setTimeout(() => {
+      mainImgEl.src = data.screenshots[newIndex];
+    }, 150);
+  } else if (mainImgEl) {
+    mainImgEl.src = data.screenshots[newIndex];
+  }
+}
+
+function initGalleryListeners() {
+  const container = document.getElementById('gallery-container');
+  if (!container || container.dataset.listenersAttached) return;
+
+  container.dataset.listenersAttached = 'true';
+
+  // Touch Swipe Handling
+  container.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+
+  container.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+  }, { passive: true });
+
+  // Keyboard Arrow Handling
+  document.addEventListener('keydown', (e) => {
+    const modal = document.getElementById('project-modal');
+    if (!modal || !modal.classList.contains('active')) return;
+
+    if (e.key === 'ArrowRight') {
+      navigateGallery(1);
+    } else if (e.key === 'ArrowLeft') {
+      navigateGallery(-1);
+    } else if (e.key === 'Escape') {
+      closeProjectModal();
+    }
+  });
+}
+
+function handleSwipe() {
+  const diff = touchEndX - touchStartX;
+  if (Math.abs(diff) > 40) {
+    if (diff < 0) {
+      navigateGallery(1);
+    } else {
+      navigateGallery(-1);
+    }
+  }
 }
 
 function closeProjectModal() {

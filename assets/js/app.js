@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initSkillsFilter();
   initScrollHighlight();
   initContactForm();
+  initScrollReveal();
 });
 
 /* Theme Toggle System */
@@ -179,4 +180,27 @@ function triggerMailtoFallback(name, email, message) {
   setTimeout(() => {
     window.location.href = mailtoUrl;
   }, 500);
+}
+
+/* Scroll Reveal Animations Observer */
+function initScrollReveal() {
+  const elements = document.querySelectorAll('.strength-card, .project-card, .skill-card, .bento-card, .timeline-item, .edu-card, .contact-item');
+  
+  elements.forEach((el, idx) => {
+    el.classList.add('reveal-on-scroll');
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -30px 0px'
+  });
+
+  elements.forEach(el => observer.observe(el));
 }
