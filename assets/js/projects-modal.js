@@ -59,6 +59,21 @@ const projectsData = {
       "assets/images/vanote-ss-3.png",
       "assets/images/vanote-ss-4.png"
     ]
+  },
+  vitamin: {
+    title: "Vitamin — Restaurant Order Management App",
+    tech: ["Flutter", "Dart", "REST APIs", "Bloc/Cubit", "Clean Architecture", "Speedo Delivery API", "QCard Gateway"],
+    description: "Built the customer-facing app for browsing the menu and placing restaurant orders. Developed the admin dashboard for managing orders, categories, products, and sub-products. Integrated with a third-party delivery service (Speedo) to hand off confirmed orders for fulfilment. Integrated the QCard payment gateway to support in-app payments.",
+    playStore: "https://play.google.com/store/apps/details?id=com.mdSoft.vitamin&pcampaignid=web_share",
+    appStore: "https://apps.apple.com/us/app/vitamin/id6802745158?l=ar",
+    dashboard: "https://vitamin.md-iraqsoft.com/",
+    icon: "assets/images/vitamin-icon.png",
+    screenshots: [
+      "assets/images/vitamin-ss-1.png",
+      "assets/images/vitamin-ss-2.png",
+      "assets/images/vitamin-ss-3.png",
+      "assets/images/vitamin-ss-4.png"
+    ]
   }
 };
 

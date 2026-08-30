@@ -9,7 +9,8 @@ const apps = [
   { id: 'gbghadir', url: 'https://play.google.com/store/apps/details?id=com.mdsoft.gbghadir&hl=en', name: 'Gb Ghadir' },
   { id: 'vanote', url: 'https://play.google.com/store/apps/details?id=com.mdsoft.vanotesclinic&hl=en', name: 'VA Note' },
   { id: 'taxi_beirut_customer', url: 'https://play.google.com/store/apps/details?id=com.taxi.md_soft.taxi_customer_app&hl=en', name: 'Taxi Beirut Customer' },
-  { id: 'taxi_beirut_agent', url: 'https://play.google.com/store/apps/details?id=com.mdsoft.taxibeirutagent&hl=en', name: 'Taxi Beirut Agent' }
+  { id: 'taxi_beirut_agent', url: 'https://play.google.com/store/apps/details?id=com.mdsoft.taxibeirutagent&hl=en', name: 'Taxi Beirut Agent' },
+  { id: 'vitamin', url: 'https://play.google.com/store/apps/details?id=com.mdSoft.vitamin&hl=en', name: 'Vitamin' }
 ];
 
 const imgDir = path.join(__dirname, 'assets', 'images');

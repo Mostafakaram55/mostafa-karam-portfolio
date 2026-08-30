@@ -552,5 +552,16 @@
       "assets/images/taxi_beirut_agent-ss-3.png",
       "assets/images/taxi_beirut_agent-ss-4.png"
     ]
+  },
+  "vitamin": {
+    "name": "Vitamin",
+    "iconUrl": "https://play-lh.googleusercontent.com/nD4ldwXh_v8uIgXa0ZdbOlQwcVLR7fWSHr5famBtTqqUUYJ7I6CR56OVosOJdVFYD45rIU7Jix7rRM5hTOg69w=s0-br30",
+    "localIcon": "assets/images/vitamin-icon.png",
+    "localScreenshots": [
+      "assets/images/vitamin-ss-1.png",
+      "assets/images/vitamin-ss-2.png",
+      "assets/images/vitamin-ss-3.png",
+      "assets/images/vitamin-ss-4.png"
+    ]
   }
 }
