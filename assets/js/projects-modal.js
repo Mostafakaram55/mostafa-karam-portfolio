@@ -83,6 +83,7 @@ let touchStartX = 0;
 let touchEndX = 0;
 
 function openProjectModal(projectKey) {
+  console.log('openProjectModal called with key:', projectKey);
   const data = projectsData[projectKey];
   if (!data) return;
 

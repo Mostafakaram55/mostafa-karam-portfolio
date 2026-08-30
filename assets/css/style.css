@@ -168,10 +168,11 @@ button {
   left: 0;
   right: 0;
   height: 80px;
-  background: var(--nav-bg);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   z-index: 1000;
   transition: var(--transition-normal);
 }
@@ -182,6 +183,22 @@ button {
   justify-content: space-between;
   height: 100%;
 }
+
+/* Mobile horizontal scroll */
+@media (max-width: 768px) {
+  .navbar .container {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+  }
+  .nav-links, .nav-actions {
+    flex-shrink: 0;
+  }
+  .nav-links::-webkit-scrollbar, .nav-actions::-webkit-scrollbar { display: none; }
+}
+
 
 .nav-brand {
   font-size: 1.5rem;
@@ -209,7 +226,14 @@ button {
   display: flex;
   align-items: center;
   gap: 2rem;
+  overflow-x: auto;
+  flex-wrap: nowrap;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
+.nav-links::-webkit-scrollbar { display: none; }
 
 .nav-link {
   font-size: 0.95rem;
@@ -238,7 +262,13 @@ button {
   display: flex;
   align-items: center;
   gap: 1rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  flex-wrap: nowrap;
+  scroll-behavior: smooth;
 }
+.nav-actions::-webkit-scrollbar { display: none; }
 
 .theme-toggle-btn {
   width: 42px;
