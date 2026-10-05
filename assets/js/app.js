@@ -1,9 +1,10 @@
 /* 
   Main Application Logic — Mostafa Karam Saeed Portfolio
-  Navbar Scroll State, Active Navigation, Skills Filtering, Mobile Drawer
+  Splash Screen, Navbar Scroll State, Active Navigation, Skills Filtering, Mobile Drawer
 */
 
 document.addEventListener('DOMContentLoaded', () => {
+  initSplash();
   initNavbarScroll();
   initMobileNav();
   initSkillsFilter();
@@ -13,6 +14,55 @@ document.addEventListener('DOMContentLoaded', () => {
   initBackToTop();
   initCopyFeedback();
 });
+
+/* Splash Screen */
+function initSplash() {
+  const root = document.documentElement;
+  const splash = document.getElementById('splash');
+  const revealHero = () => root.classList.add('hero-in');
+
+  if (!splash || !root.classList.contains('splash-active')) {
+    if (splash) splash.remove();
+    revealHero();
+    return;
+  }
+
+  const count = splash.querySelector('.splash-count');
+  const bar = splash.querySelector('.splash-bar span');
+  const DURATION = 1800;
+  let start = null;
+  let finished = false;
+
+  function finish() {
+    if (finished) return;
+    finished = true;
+    try { sessionStorage.setItem('mk_splash_seen', '1'); } catch (e) {}
+    splash.classList.add('is-leaving');
+    revealHero();
+    setTimeout(() => {
+      root.classList.remove('splash-active');
+      splash.remove();
+    }, 450);
+  }
+
+  function tick(ts) {
+    if (finished) return;
+    if (start === null) start = ts;
+    const t = Math.min((ts - start) / DURATION, 1);
+    const eased = 1 - Math.pow(1 - t, 3);
+    count.textContent = String(Math.round(eased * 100)).padStart(3, '0');
+    bar.style.transform = `scaleX(${eased})`;
+    if (t < 1) {
+      requestAnimationFrame(tick);
+    } else {
+      setTimeout(finish, 150);
+    }
+  }
+
+  requestAnimationFrame(tick);
+  splash.addEventListener('click', finish);
+  document.addEventListener('keydown', finish, { once: true });
+}
 
 /* Navbar Scroll State */
 function initNavbarScroll() {

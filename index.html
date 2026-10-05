@@ -36,6 +36,18 @@
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
+  <!-- Splash gate: decided before first paint so there is no flash -->
+  <script>
+    (function () {
+      var root = document.documentElement;
+      root.classList.add('js');
+      try {
+        var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (!reduce && !sessionStorage.getItem('mk_splash_seen')) root.classList.add('splash-active');
+      } catch (e) {}
+    })();
+  </script>
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,6 +57,25 @@
   <link rel="stylesheet" href="assets/css/style.css?v=10.0_light">
 </head>
 <body>
+
+  <!-- Splash Screen -->
+  <div class="splash" id="splash" aria-hidden="true">
+    <div class="splash-bg"></div>
+    <div class="splash-content">
+      <div class="splash-mark"><span>MK</span><i class="splash-dot"></i></div>
+      <div class="splash-name"><span style="--n:0">M</span><span style="--n:1">o</span><span style="--n:2">s</span><span style="--n:3">t</span><span style="--n:4">a</span><span style="--n:5">f</span><span style="--n:6">a</span><span class="sp"></span><span style="--n:7">K</span><span style="--n:8">a</span><span style="--n:9">r</span><span style="--n:10">a</span><span style="--n:11">m</span><span class="sp"></span><span style="--n:12">S</span><span style="--n:13">a</span><span style="--n:14">e</span><span style="--n:15">e</span><span style="--n:16">d</span></div>
+      <div class="splash-roles">
+        <span style="--r:0">Flutter Developer</span>
+        <span style="--r:1">Clean Architecture</span>
+        <span style="--r:2">Mobile &amp; Dashboards</span>
+      </div>
+      <div class="splash-progress">
+        <div class="splash-bar"><span></span></div>
+        <div class="splash-count">000</div>
+      </div>
+      <div class="splash-skip">Click to skip</div>
+    </div>
+  </div>
 
   <!-- Navigation Bar -->
   <header class="navbar" id="navbar">
@@ -918,8 +949,8 @@
     <div class="modal-container" style="max-width: 800px;">
       <button class="modal-close-btn" onclick="closeCvModal()" aria-label="Close Modal">&times;</button>
       
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
-        <h3 style="font-size: 1.4rem; font-weight: 800;"><i class="fa-solid fa-file-contract"></i> Curriculum Vitae (ATS Format)</h3>
+      <div class="cv-modal-head">
+        <h3 style="font-size: 1.15rem; font-weight: 800;"><i class="fa-solid fa-file-contract"></i> Curriculum Vitae (ATS Format)</h3>
         <div style="display: flex; gap: 0.5rem;">
           <a href="assets/cv/mostafa_karam_saeed_cv.docx" download="Mostafa_Karam_Saeed_CV.docx" class="btn btn-sm btn-primary">
             <i class="fa-solid fa-download"></i> Download .docx
