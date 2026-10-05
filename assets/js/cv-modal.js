@@ -16,7 +16,7 @@ function closeCvModal() {
 }
 
 function downloadCvFile(format = 'docx') {
-  const fileName = format === 'pdf' ? 'Mostafa_Karam_CV_ATS.pdf' : 'Mostafa_Karam_CV_ATS.docx';
+  const fileName = format === 'pdf' ? 'mostafa_karam_saeed_cv.pdf' : 'mostafa_karam_saeed_cv.docx';
   const cvPath = `assets/cv/${fileName}`;
   
   const link = document.createElement('a');

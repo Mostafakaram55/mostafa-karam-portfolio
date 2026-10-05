@@ -1,10 +1,10 @@
 /* 
   Main Application Logic — Mostafa Karam Saeed Portfolio
-  Dark/Light Theme Toggle, Active Navigation, Skills Filtering, Mobile Drawer
+  Navbar Scroll State, Active Navigation, Skills Filtering, Mobile Drawer
 */
 
 document.addEventListener('DOMContentLoaded', () => {
-  initThemeToggle();
+  initNavbarScroll();
   initMobileNav();
   initSkillsFilter();
   initScrollHighlight();
@@ -14,33 +14,14 @@ document.addEventListener('DOMContentLoaded', () => {
   initCopyFeedback();
 });
 
-/* Theme Toggle System */
-function initThemeToggle() {
-  const toggleBtn = document.getElementById('theme-toggle');
-  const themeIcon = document.getElementById('theme-icon');
-  
-  const savedTheme = localStorage.getItem('mk_portfolio_theme') || 'dark';
-  document.documentElement.setAttribute('data-theme', savedTheme);
-  updateThemeIcon(savedTheme);
+/* Navbar Scroll State */
+function initNavbarScroll() {
+  const navbar = document.getElementById('navbar');
+  if (!navbar) return;
 
-  toggleBtn.addEventListener('click', () => {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    
-    document.documentElement.setAttribute('data-theme', newTheme);
-    localStorage.setItem('mk_portfolio_theme', newTheme);
-    updateThemeIcon(newTheme);
-  });
-}
-
-function updateThemeIcon(theme) {
-  const icon = document.getElementById('theme-icon');
-  if (!icon) return;
-  if (theme === 'dark') {
-    icon.className = 'fa-solid fa-sun';
-  } else {
-    icon.className = 'fa-solid fa-moon';
-  }
+  const update = () => navbar.classList.toggle('scrolled', window.pageYOffset > 10);
+  update();
+  window.addEventListener('scroll', update, { passive: true });
 }
 
 /* Mobile Drawer Menu */

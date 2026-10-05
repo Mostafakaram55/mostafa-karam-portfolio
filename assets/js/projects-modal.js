@@ -22,9 +22,12 @@ const projectsData = {
     title: "Tok Tok Taxi — Delivery & Ride-Hailing Platform",
     tech: ["Flutter", "Dart", "Google Maps SDK", "Firebase", "REST APIs", "WebSockets", "Bluetooth Receipt Printing", "Bloc/Cubit", "MVVM"],
     description: "Complete multi-application ride-hailing and localized delivery ecosystem. Includes separate native Flutter applications for Customers, Drivers, and Agents, alongside a web management dashboard. Integrates live Google Maps GPS trip tracking, dynamic fare calculation, internal thermal receipt printing, and Bluetooth mobile printer integration.",
-    playStoreUser: "https://play.google.com/store/apps/details?id=com.mdsoft.tok_tok_taxi_user&hl=ar",
+    playStoreUser: "https://play.google.com/store/apps/details?id=com.mdsoft.tok_tok_taxi_user",
+    appStoreUser: "https://apps.apple.com/om/app/%D8%AA-%D9%83-%D8%AA-%D9%83-%D8%AA%D9%83%D8%B3%D9%8A/id6749179422",
     playStoreDriver: "https://play.google.com/store/apps/details?id=com.mdsoft.tok_tok_taxi_drivers",
+    appStoreDriver: "https://apps.apple.com/om/app/id6749203906",
     playStoreAgent: "https://play.google.com/store/apps/details?id=com.mdsoft.tok_tok_taxi_agent",
+    appStoreAgent: "https://apps.apple.com/om/app/%D8%AA-%D9%83-%D8%AA-%D9%83-%D8%A7%D9%84%D9%88%D9%83%D9%8A%D9%84/id6749199890",
     dashboard: "https://new-toktok-test.md-soft.app/",
     icon: "assets/images/tok_tok_taxi_user-icon.png",
     screenshots: [
@@ -52,6 +55,7 @@ const projectsData = {
     tech: ["Flutter", "Dart", "Firebase Firestore", "FCM Push Notifications", "REST APIs", "Bloc/Cubit", "MVVM", "Clean Architecture"],
     description: "Healthcare patient management and clinic scheduling platform. Organizes patient records, medical history, doctor visit notes, and consultation schedules in real time using Firebase Firestore. Sends automated push notifications via FCM to remind patients of upcoming appointments.",
     playStore: "https://play.google.com/store/apps/details?id=com.mdsoft.vanotesclinic",
+    appStore: "https://apps.apple.com/us/app/va-note/id6759074915",
     dashboard: "https://www.va-note.com/clinic/",
     icon: "assets/images/vanote-icon.png",
     screenshots: [
@@ -111,15 +115,19 @@ function openProjectModal(projectKey) {
   if (data.appStore) {
     linksHtml += `<a href="${data.appStore}" target="_blank" rel="noopener" class="btn btn-sm btn-secondary"><i class="fa-brands fa-apple"></i> App Store</a>`;
   }
-  if (data.playStoreUser) {
-    linksHtml += `<a href="${data.playStoreUser}" target="_blank" rel="noopener" class="btn btn-sm btn-primary"><i class="fa-brands fa-google-play"></i> User App</a>`;
-  }
-  if (data.playStoreDriver) {
-    linksHtml += `<a href="${data.playStoreDriver}" target="_blank" rel="noopener" class="btn btn-sm btn-outline"><i class="fa-brands fa-google-play"></i> Driver App</a>`;
-  }
-  if (data.playStoreAgent) {
-    linksHtml += `<a href="${data.playStoreAgent}" target="_blank" rel="noopener" class="btn btn-sm btn-outline"><i class="fa-brands fa-google-play"></i> Agent App</a>`;
-  }
+  const roleLinks = [
+    ['playStoreUser', 'fa-brands fa-google-play', 'User App', 'btn-primary'],
+    ['appStoreUser', 'fa-brands fa-apple', 'User App', 'btn-secondary'],
+    ['playStoreDriver', 'fa-brands fa-google-play', 'Driver App', 'btn-primary'],
+    ['appStoreDriver', 'fa-brands fa-apple', 'Driver App', 'btn-secondary'],
+    ['playStoreAgent', 'fa-brands fa-google-play', 'Agent App', 'btn-primary'],
+    ['appStoreAgent', 'fa-brands fa-apple', 'Agent App', 'btn-secondary']
+  ];
+  roleLinks.forEach(([key, icon, label, cls]) => {
+    if (data[key]) {
+      linksHtml += `<a href="${data[key]}" target="_blank" rel="noopener" class="btn btn-sm ${cls}"><i class="${icon}"></i> ${label}</a>`;
+    }
+  });
   if (data.dashboard) {
     linksHtml += `<a href="${data.dashboard}" target="_blank" rel="noopener" class="btn btn-sm btn-secondary"><i class="fa-solid fa-gauge-high"></i> Dashboard</a>`;
   }
