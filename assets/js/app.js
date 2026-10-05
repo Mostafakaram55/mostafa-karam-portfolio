@@ -4,6 +4,7 @@
 */
 
 document.addEventListener('DOMContentLoaded', () => {
+  if (!location.hash) window.scrollTo(0, 0);
   initSplash();
   initNavbarScroll();
   initMobileNav();
