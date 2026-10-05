@@ -40,6 +40,19 @@ if (fs.existsSync(path.join(rootDir, 'assets'))) {
   console.log('✓ Copied assets directory');
 }
 
+// Stamp a content hash on CSS/JS URLs so a changed file is never served from a stale cache
+const crypto = require('crypto');
+const distIndex = path.join(distDir, 'index.html');
+let indexHtml = fs.readFileSync(distIndex, 'utf8');
+indexHtml = indexHtml.replace(/(assets\/(?:css|js)\/[\w.-]+)\?v=[^"']*/g, (match, assetPath) => {
+  const file = path.join(distDir, assetPath);
+  if (!fs.existsSync(file)) return match;
+  const hash = crypto.createHash('md5').update(fs.readFileSync(file)).digest('hex').slice(0, 10);
+  return `${assetPath}?v=${hash}`;
+});
+fs.writeFileSync(distIndex, indexHtml);
+console.log('✓ Stamped asset versions');
+
 // Copy vercel.json if exists
 if (fs.existsSync(path.join(rootDir, 'vercel.json'))) {
   fs.copyFileSync(path.join(rootDir, 'vercel.json'), path.join(distDir, 'vercel.json'));
