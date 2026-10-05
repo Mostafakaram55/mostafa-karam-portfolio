@@ -30,12 +30,38 @@ const projectsData = {
     appStoreAgent: "https://apps.apple.com/om/app/%D8%AA-%D9%83-%D8%AA-%D9%83-%D8%A7%D9%84%D9%88%D9%83%D9%8A%D9%84/id6749199890",
     dashboard: "https://new-toktok-test.md-soft.app/",
     icon: "assets/images/tok_tok_taxi_user-icon.png",
+    mockup: true,
     screenshots: [
-      "assets/images/tok_tok_taxi_user-ss-2.png",
-      "assets/images/tok_tok_taxi_user-ss-3.png",
-      "assets/images/tok_tok_taxi_user-ss-4.png",
-      "assets/images/tok_tok_taxi_driver-ss-3.png",
-      "assets/images/tok_tok_taxi_agent-ss-3.png"
+      "assets/images/toktok-mockup-00.webp",
+      "assets/images/toktok-mockup-01.webp",
+      "assets/images/toktok-mockup-02.webp",
+      "assets/images/toktok-mockup-03.webp",
+      "assets/images/toktok-mockup-04.webp",
+      "assets/images/toktok-mockup-05.webp",
+      "assets/images/toktok-mockup-06.webp",
+      "assets/images/toktok-mockup-07.webp",
+      "assets/images/toktok-mockup-08.webp",
+      "assets/images/toktok-mockup-09.webp",
+      "assets/images/toktok-mockup-10.webp",
+      "assets/images/toktok-mockup-11.webp",
+      "assets/images/toktok-mockup-12.webp",
+      "assets/images/toktok-mockup-13.webp",
+      "assets/images/toktok-mockup-14.webp",
+      "assets/images/toktok-mockup-15.webp",
+      "assets/images/toktok-mockup-16.webp",
+      "assets/images/toktok-mockup-17.webp",
+      "assets/images/toktok-mockup-18.webp",
+      "assets/images/toktok-mockup-19.webp",
+      "assets/images/toktok-mockup-20.webp",
+      "assets/images/toktok-mockup-21.webp",
+      "assets/images/toktok-mockup-22.webp",
+      "assets/images/toktok-mockup-23.webp",
+      "assets/images/toktok-mockup-24.webp",
+      "assets/images/toktok-mockup-25.webp",
+      "assets/images/toktok-mockup-26.webp",
+      "assets/images/toktok-mockup-27.webp",
+      "assets/images/toktok-mockup-28.webp",
+      "assets/images/toktok-mockup-29.webp"
     ]
   },
   gbghadir: {
@@ -58,10 +84,25 @@ const projectsData = {
     appStore: "https://apps.apple.com/us/app/va-note/id6759074915",
     dashboard: "https://www.va-note.com/clinic/",
     icon: "assets/images/vanote-icon.png",
+    mockup: true,
     screenshots: [
-      "assets/images/vanote-ss-2.png",
-      "assets/images/vanote-ss-3.png",
-      "assets/images/vanote-ss-4.png"
+      "assets/images/vanote-mockup-00.webp",
+      "assets/images/vanote-mockup-01.webp",
+      "assets/images/vanote-mockup-02.webp",
+      "assets/images/vanote-mockup-03.webp",
+      "assets/images/vanote-mockup-04.webp",
+      "assets/images/vanote-mockup-05.webp",
+      "assets/images/vanote-mockup-06.webp",
+      "assets/images/vanote-mockup-07.webp",
+      "assets/images/vanote-mockup-08.webp",
+      "assets/images/vanote-mockup-09.webp",
+      "assets/images/vanote-mockup-10.webp",
+      "assets/images/vanote-mockup-11.webp",
+      "assets/images/vanote-mockup-12.webp",
+      "assets/images/vanote-mockup-13.webp",
+      "assets/images/vanote-mockup-14.webp",
+      "assets/images/vanote-mockup-15.webp",
+      "assets/images/vanote-mockup-16.webp"
     ]
   },
   vitamin: {
@@ -135,6 +176,8 @@ function openProjectModal(projectKey) {
   linksEl.innerHTML = linksHtml;
 
   // Render Gallery Thumbnails
+  thumbsContainer.classList.toggle('mockup-thumbs', !!data.mockup);
+  document.getElementById('gallery-container').classList.toggle('mockup-view', !!data.mockup);
   thumbsContainer.innerHTML = data.screenshots.map((imgSrc, idx) => `
     <div class="thumb-item ${idx === 0 ? 'active' : ''}" onclick="selectGalleryImage(${idx})">
       <img src="${imgSrc}" alt="Thumbnail ${idx + 1}" />

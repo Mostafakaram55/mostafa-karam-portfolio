@@ -958,10 +958,10 @@ main {
     linear-gradient(160deg, var(--banner-a, #e8edfd), var(--banner-b, #d6defb));
 }
 
-.project-card:nth-child(1) .project-banner { --banner-a: #fff1e8; --banner-b: #fbd9c6; }
-.project-card:nth-child(2) .project-banner { --banner-a: #fff8dc; --banner-b: #f8e6a0; }
-.project-card:nth-child(3) .project-banner { --banner-a: #e6f6ef; --banner-b: #c3e9d7; }
-.project-card:nth-child(4) .project-banner { --banner-a: #f1ecfc; --banner-b: #ddd0f7; }
+.project-card:nth-child(1) .project-banner { --banner-a: #fff8dc; --banner-b: #f8e6a0; }
+.project-card:nth-child(2) .project-banner { --banner-a: #f1ecfc; --banner-b: #ddd0f7; }
+.project-card:nth-child(3) .project-banner { --banner-a: #fff1e8; --banner-b: #fbd9c6; }
+.project-card:nth-child(4) .project-banner { --banner-a: #e6f6ef; --banner-b: #c3e9d7; }
 .project-card:nth-child(5) .project-banner { --banner-a: #e8f5e0; --banner-b: #cbe8b8; }
 
 .project-banner > img {
@@ -979,6 +979,28 @@ main {
 
 .project-card:hover .project-banner > img {
   transform: translate(-50%, 6px);
+}
+
+/* Full-bleed designer mockups (cover slide fills the banner) */
+.project-banner.has-mockup > img {
+  left: 0;
+  top: 0;
+  bottom: auto;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 0;
+  box-shadow: none;
+  transform: scale(1);
+}
+
+.project-card:hover .project-banner.has-mockup > img {
+  transform: scale(1.04);
+}
+
+.project-banner.has-mockup .project-banner-overlay {
+  display: none;
 }
 
 .project-banner-overlay {
@@ -1800,6 +1822,17 @@ textarea.form-control {
   font-size: 0.74rem;
 }
 
+.gallery-main-view.mockup-view {
+  height: auto;
+  aspect-ratio: 3 / 2;
+  max-height: 62vh;
+}
+
+.gallery-thumbs.mockup-thumbs .thumb-item {
+  width: 108px;
+  height: 72px;
+}
+
 .gallery-thumbs {
   display: flex;
   gap: 10px;
@@ -2082,6 +2115,11 @@ a.contact-item.reveal-on-scroll.revealed:hover {
 
   .projects-grid {
     grid-template-columns: 1fr;
+  }
+
+  .project-card .project-banner.has-mockup {
+    height: auto;
+    aspect-ratio: 3 / 2;
   }
 
   .store-grid {
