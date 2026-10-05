@@ -1066,22 +1066,53 @@ main {
   margin-top: auto;
 }
 
-.store-row {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
+.store-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 8px;
   width: 100%;
 }
 
+.store-grid-fit {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.store-cell {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 6px 5px 12px;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  background: var(--bg-card);
+}
+
 .store-row-label {
-  width: 52px;
+  flex: 1;
+  padding-right: 8px;
+  white-space: nowrap;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+.store-icon-btn {
+  width: 32px;
+  height: 32px;
   flex-shrink: 0;
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--text-muted);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 0.85rem;
+  transition: all var(--transition-fast);
+}
+
+.store-icon-btn:hover {
+  background: var(--text-primary);
+  color: #fff;
 }
 
 /* ============ Skills ============ */
@@ -2050,6 +2081,10 @@ a.contact-item.reveal-on-scroll.revealed:hover {
   }
 
   .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .store-grid {
     grid-template-columns: 1fr;
   }
 
