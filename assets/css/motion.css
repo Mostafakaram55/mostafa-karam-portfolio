@@ -1,0 +1,317 @@
+/*
+  Scroll Motion Layer — progress bar, word-reveal headings, staggered cards,
+  hero parallax, pointer spotlight. Everything is progressive enhancement:
+  without JS (no html.js) or with reduced motion, the page renders static.
+*/
+
+/* ============ Scroll progress ============ */
+.scroll-progress {
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: 3px;
+  z-index: 1100;
+  pointer-events: none;
+  background: linear-gradient(90deg, var(--accent), var(--accent-purple) 55%, var(--accent-coral));
+  transform-origin: 0 50%;
+  transform: scaleX(var(--progress, 0));
+  will-change: transform;
+}
+
+/* ============ Section tag: line draws in ============ */
+html.js .section-tag::after {
+  width: 0;
+  transition: width 0.9s 0.15s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html.js .section-tag.in::after {
+  width: 40px;
+}
+
+/* ============ Word-by-word heading reveal ============ */
+.split-word {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  /* room for descenders so the mask doesn't clip them */
+  padding-bottom: 0.12em;
+  margin-bottom: -0.12em;
+}
+
+.split-word > span {
+  display: inline-block;
+  transform: translateY(110%);
+  transition: transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: calc(var(--w, 0) * 55ms);
+}
+
+.section-title.in .split-word > span {
+  transform: translateY(0);
+}
+
+/* Subtitle follows the heading */
+html.js .section-subtitle {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.8s 0.25s ease, transform 0.8s 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html.js .section-subtitle.in {
+  opacity: 1;
+  transform: none;
+}
+
+/* ============ Cards: stagger + gentle scale ============ */
+.reveal-on-scroll {
+  transform: translateY(32px) scale(0.975);
+  transition-delay: calc(var(--stagger, 0) * 90ms), calc(var(--stagger, 0) * 90ms), 0s, 0s;
+}
+
+.reveal-on-scroll.revealed {
+  transform: none;
+}
+
+/* hover transitions must not inherit the entrance delay */
+.reveal-on-scroll.revealed {
+  transition-delay: 0s;
+}
+
+/* ============ Pointer spotlight on cards ============ */
+.strength-card,
+.project-card,
+.skill-card,
+.bento-card,
+.edu-card {
+  --mx: 50%;
+  --my: 50%;
+}
+
+.strength-card::after,
+.project-card::after,
+.skill-card::after,
+.bento-card::after,
+.edu-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(360px circle at var(--mx) var(--my), rgba(43, 80, 214, 0.09), transparent 65%);
+  transition: opacity 0.35s ease;
+}
+
+.strength-card:hover::after,
+.project-card:hover::after,
+.skill-card:hover::after,
+.bento-card:hover::after,
+.edu-card:hover::after {
+  opacity: 1;
+}
+
+.project-card,
+.skill-card,
+.bento-card,
+.edu-card {
+  position: relative;
+}
+
+/* ============ Experience bullets cascade ============ */
+html.js .timeline-bullets li {
+  opacity: 0;
+  transform: translateX(-14px);
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: calc(var(--b, 0) * 110ms + 250ms);
+}
+
+html.js .timeline-content.in .timeline-bullets li {
+  opacity: 1;
+  transform: none;
+}
+
+/* ============ Hero parallax (JS drives the custom properties) ============ */
+.hero-glow {
+  transform: translate3d(0, calc(var(--hero-y, 0) * 0.25px), 0);
+  will-change: transform;
+}
+
+.hero-visual .hero-card-frame {
+  translate: 0 calc(var(--hero-y, 0) * -0.08px);
+}
+
+.float-chip.chip-a { translate: 0 calc(var(--hero-y, 0) * -0.18px); }
+.float-chip.chip-b { translate: 0 calc(var(--hero-y, 0) * -0.3px); }
+.float-chip.chip-c { translate: 0 calc(var(--hero-y, 0) * -0.12px); }
+
+/* ============ Section-aware dot rail (desktop) ============ */
+.section-rail {
+  position: fixed;
+  right: 22px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 900;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.section-rail.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.section-rail a {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border-strong);
+  background: var(--bg-primary);
+  transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+}
+
+.section-rail a::before {
+  content: attr(data-label);
+  position: absolute;
+  right: 22px;
+  top: 50%;
+  transform: translate(6px, -50%);
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--text-primary);
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.section-rail a:hover::before {
+  opacity: 1;
+  transform: translate(0, -50%);
+}
+
+.section-rail a.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  transform: scale(1.5);
+}
+
+@media (max-width: 1280px) {
+  .section-rail { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-progress { display: none; }
+  .split-word > span,
+  html.js .section-subtitle,
+  html.js .timeline-bullets li,
+  .reveal-on-scroll {
+    transform: none !important;
+    opacity: 1 !important;
+  }
+  html.js .section-tag::after { width: 40px; }
+}
+
+/* ============ Tech stack marquee (speed follows scroll velocity) ============ */
+.stack-marquee {
+  overflow: hidden;
+  margin-top: 36px;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+.stack-marquee .stack-chips {
+  flex-wrap: nowrap;
+  width: max-content;
+  padding: 6px 0;
+  will-change: transform;
+}
+
+.stack-chip {
+  flex: none;
+}
+
+/* ============ 3D tilt on project banners ============ */
+.project-banner {
+  transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.project-banner.is-tilting {
+  transition: transform 0.08s linear;
+}
+
+/* glossy sheen that follows the pointer */
+.project-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(240px circle at var(--bx, 50%) var(--by, 50%), rgba(255, 255, 255, 0.35), transparent 60%);
+  transition: opacity 0.3s ease;
+}
+
+.project-banner.is-tilting::after {
+  opacity: 1;
+}
+
+/* ============ Cursor follower ============ */
+.cursor-ring {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 6000;
+  width: 38px;
+  height: 38px;
+  margin: -19px 0 0 -19px;
+  border: 1.5px solid var(--accent);
+  border-radius: 50%;
+  pointer-events: none;
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  transition: width 0.3s cubic-bezier(0.22, 1, 0.36, 1), height 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    margin 0.3s cubic-bezier(0.22, 1, 0.36, 1), background 0.3s ease, opacity 0.3s ease;
+  will-change: transform;
+}
+
+.cursor-ring.on { opacity: 0.85; }
+
+.cursor-ring span {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.cursor-ring.is-link {
+  width: 58px;
+  height: 58px;
+  margin: -29px 0 0 -29px;
+  background: rgba(43, 80, 214, 0.1);
+}
+
+.cursor-ring.is-view {
+  width: 84px;
+  height: 84px;
+  margin: -42px 0 0 -42px;
+  background: var(--accent);
+  opacity: 1;
+}
+
+.cursor-ring.is-view span { opacity: 1; }
+
+@media (prefers-reduced-motion: reduce) {
+  .project-banner { transform: none; }
+  .cursor-ring { display: none; }
+}
