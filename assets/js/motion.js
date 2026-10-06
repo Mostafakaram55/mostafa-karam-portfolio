@@ -290,7 +290,7 @@
 
   /* Buttons and social icons are gently pulled toward the pointer */
   function initMagnetic() {
-    const items = document.querySelectorAll('.hero-cta .btn, .nav-actions .btn, .social-icon, #form-submit-btn');
+    const items = document.querySelectorAll('.hero-cta .btn, .nav-actions .btn, .social-icon');
     const state = Array.from(items).map((el) => ({ el, x: 0, y: 0, tx: 0, ty: 0 }));
     let running = false;
 
