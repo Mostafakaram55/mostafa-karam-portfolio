@@ -51,7 +51,7 @@ const projectsData = {
   tok_tok_taxi: {
     title: "Tok Tok Taxi — Delivery & Ride-Hailing Platform",
     tech: ["Flutter", "Dart", "Google Maps SDK", "Firebase", "REST APIs", "WebSockets", "Bluetooth Receipt Printing", "Bloc/Cubit", "MVVM"],
-    description: "Complete multi-application ride-hailing and localized delivery ecosystem. Includes separate native Flutter applications for Customers, Drivers, and Agents, alongside a web management dashboard. Integrates live Google Maps GPS trip tracking, dynamic fare calculation, internal thermal receipt printing, and Bluetooth mobile printer integration.",
+    description: "Complete multi-application ride-hailing and localized delivery ecosystem. Includes separate native Flutter applications for Customers, Drivers, and Agents, alongside a web management dashboard. Integrates live Google Maps GPS trip tracking, dynamic fare calculation, internal thermal receipt printing, and Bluetooth mobile printer integration. The entire project was later cloned into a new standalone product named Makana, reusing the core architecture with new branding and configuration.",
     playStoreUser: "https://play.google.com/store/apps/details?id=com.mdsoft.tok_tok_taxi_user",
     appStoreUser: "https://apps.apple.com/om/app/%D8%AA-%D9%83-%D8%AA-%D9%83-%D8%AA%D9%83%D8%B3%D9%8A/id6749179422",
     playStoreDriver: "https://play.google.com/store/apps/details?id=com.mdsoft.tok_tok_taxi_drivers",

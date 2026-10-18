@@ -59,6 +59,7 @@ Dashboard
 Built a complete delivery and ride-hailing ecosystem with live trip tracking via Google Maps.
 Developed separate apps for the customer, driver, and agent, plus an admin dashboard to manage operations.
 Implemented Bluetooth-based receipt printing and internal printing workflows for order fulfilment.
+Cloned the entire Tok Tok Taxi project into a new standalone product named Makana, reusing the core architecture with new branding and configuration.
 Gb Ghadir — E-Commerce App with Live Chat Support
 Technologies: 
 Flutter, Dart, Firebase (Auth, 
