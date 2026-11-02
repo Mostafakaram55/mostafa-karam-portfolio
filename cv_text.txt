@@ -1,132 +1,87 @@
-﻿Mostafa Karam Saeed
-Flutter Developer · Mobile &amp; Dashboard Applications · Clean Architecture
-Awsim, Giza, Egypt · +20 111 331 2766 · 
-GitHub
- · 
-LinkedIn
- · mostafakaram345678@gmail.com
-Summary
-Flutter Developer with 2 years of professional experience at 
-MDSoft
-, developing and maintaining production-ready mobile and dashboard applications. Experienced in building scalable Flutter applications using Dart, Clean Architecture, Bloc/Cubit, REST APIs, Firebase, and modern development practices. Contributed to 5 live production projects, including mobile applications published on Google Play and the Apple App Store, along with web-based dashboards. Also familiar with AI Automation and integrating automation concepts into modern software development workflows.
-Experience
-Flutter Developer · 
-MDSoft
-2024 – Present
-Developed and maintained multiple production-grade Flutter mobile applications published on Google Play and the Apple App Store.
-Built and deployed KORLEN, a full-featured e-commerce app, along with 2 white-label clones: HTG and Veron, sharing a common codebase with 
-customised
- branding and configuration.
-Developed Tok 
-Tok
- Taxi, a complete delivery and ride-hailing platform with live location tracking, an admin dashboard, and separate user, driver, and agent applications, including Bluetooth receipt printing and internal printing support.
-Developed Gb Ghadir, a full-featured e-commerce app integrated with WhatsApp chat and a custom WebSocket-based live chat for real-time technical support.
-Developed VA Note, a patient management and appointment scheduling app with Firebase 
-Firestore
-, FCM reminders, and MVVM Clean Architecture.
-Developed Vitamin, a restaurant order management app with a customer ordering app and an admin dashboard for managing orders, categories, and sub-products, integrated with a third-party delivery service and the 
-QCard
- payment gateway.
-Configured CI/CD pipelines using GitHub Actions for automated APK/AAB builds and deployments.
-Projects
-KORLEN — E-Commerce App (with HTG &amp; Veron clones)
-Technologies: 
-Flutter, Dart, Firebase (Auth, 
-Firestore
-, FCM), REST APIs, Bloc/Cubit, MVVM, Clean Architecture
-Play Store
- | 
-App Store
- | 
-Admin Dashboard
-Developed a full-featured e-commerce app for online retail, including product catalog, cart, and secure checkout.
-Built 2 white-label clones of the app — HTG and Veron — reusing the core codebase with custom branding and store configuration.
-Implemented real-time order updates and push notifications via Firebase Cloud Messaging.
-Tok 
-Tok
- Taxi — Delivery &amp; Ride-Hailing Platform
-Technologies: 
-Flutter, Dart, Firebase (Auth, 
-Firestore
-, FCM), REST APIs, Google Maps, Bloc/Cubit, MVVM, Clean Architecture
-User App
- | 
-Driver App
- | 
-Agent App
- | 
-Dashboard
-Built a complete delivery and ride-hailing ecosystem with live trip tracking via Google Maps.
-Developed separate apps for the customer, driver, and agent, plus an admin dashboard to manage operations.
-Implemented Bluetooth-based receipt printing and internal printing workflows for order fulfilment.
-Cloned the entire Tok Tok Taxi project into a new standalone product named Makana, reusing the core architecture with new branding and configuration.
+Mostafa Karam Saeed
+Flutter Developer · Mobile & Dashboard Applications · Clean Architecture
+Awsim, Giza, Egypt · +20 111 331 2766 · GitHub · LinkedIn · mostafakaram345678@gmail.com
+
+SUMMARY
+Flutter Developer with 2 years of professional experience at MDSoft, developing and maintaining production-ready mobile and dashboard applications. Experienced in building scalable Flutter applications using Dart, Clean Architecture, Bloc/Cubit, REST APIs, Firebase, and modern development practices. Contributed to 5 live production projects, including mobile applications published on Google Play and the Apple App Store, along with web-based dashboards. Also familiar with AI Automation and integrating automation concepts into modern software development workflows.
+
+EXPERIENCE
+Flutter Developer · MDSoft   2024 – Present
+• Developed and maintained multiple production-grade Flutter mobile applications published on Google Play and the Apple App Store.
+• Built and deployed KORLEN, a full-featured e-commerce app, along with 2 white-label clones: HTG and Veron, sharing a common codebase with customised branding and configuration.
+• Developed Tok Tok Taxi, a complete delivery and ride-hailing platform with live location tracking, an admin dashboard, and separate user, driver, and agent applications, including Bluetooth receipt printing and internal printing support.
+• Developed Gb Ghadir, a full-featured e-commerce app integrated with WhatsApp chat and a custom WebSocket-based live chat for real-time technical support.
+• Developed VA Note, a patient management and appointment scheduling app with Firebase Firestore, FCM reminders, and MVVM Clean Architecture.
+• Developed Vitamin, a restaurant order management app with a customer ordering app and an admin dashboard for managing orders, categories, and sub-products, integrated with a third-party delivery service and the QCard payment gateway.
+• Configured CI/CD pipelines using GitHub Actions for automated APK/AAB builds and deployments.
+
+Flutter Intern · Orange Digital Center   2022 · 3 months
+• Completed intensive hands-on Flutter and Dart training covering widgets, navigation, and responsive UI design.
+• Built mobile app screens with reusable widgets and clean, maintainable project structure.
+• Consumed REST APIs and managed app state using Bloc/Cubit.
+• Practised Git-based workflows and delivered a practical Flutter project at the end of the program.
+
+Flutter Intern · Instant Software Solutions   2022 · 3 months
+• Developed Flutter application features and UI screens from design specifications.
+• Integrated REST APIs and handled loading, error, and empty states across screens.
+• Applied Bloc/Cubit state management and organised code with Clean Architecture principles.
+• Worked with Firebase services and collaborated with the team using Git.
+• Received a Certificate of Appreciation for completing the 3-month Flutter Developer training.
+
+Training Courses · MASA for Training & Consulting   Jul – Sep 2022
+• Flutter — practical course, 16 Jul – 1 Sep 2022, 30 practical training hours (certificate of completion).
+• Advanced Flutter — practical course, 21 Aug – 18 Sep 2022, 30 practical training hours (certificate of completion).
+• Networks — practical course, 16 Jul – 1 Sep 2022, 30 practical training hours (certificate of completion).
+
+Arduino Course (Project Maker) · 4G Academy   Feb 2021
+• Completed a hands-on Arduino course on building electronics and microcontroller projects; certificate issued 25 Feb 2021 with grade Excellent.
+
+Python & AI with Android Mobile Application · TSA   Oct – Nov 2020
+• Completed an online course held in Cairo (1 Oct – 15 Nov 2020) by Progress and Knowledge for Educational Services (TSA); certificate issued 20 Nov 2020.
+
+PROJECTS
+KORLEN — E-Commerce App (with HTG & Veron clones)
+Play Store | App Store | Admin Dashboard
+• Developed a full-featured e-commerce app for online retail, including product catalog, cart, and secure checkout.
+• Built 2 white-label clones of the app — HTG and Veron — reusing the core codebase with custom branding and store configuration.
+• Implemented real-time order updates and push notifications via Firebase Cloud Messaging.
+
+Tok Tok Taxi — Delivery & Ride-Hailing Platform
+User App | Driver App | Agent App | Dashboard
+• Built a complete delivery and ride-hailing ecosystem with live trip tracking via Google Maps.
+• Developed separate apps for the customer, driver, and agent, plus an admin dashboard to manage operations.
+• Implemented Bluetooth-based receipt printing and internal printing workflows for order fulfilment.
+
 Gb Ghadir — E-Commerce App with Live Chat Support
-Technologies: 
-Flutter, Dart, Firebase (Auth, 
-Firestore
-, FCM), REST APIs, 
-WebSockets
-, Bloc/Cubit, Clean Architecture
 Play Store
-Developed a full e-commerce app covering catalog browsing, cart, and checkout.
-Integrated real-time technical support via a WhatsApp chat integration and a custom in-app live chat built with 
-WebSockets
-.
-VA Note — Patient Management &amp; Appointment App
-Technologies: 
-Flutter, Dart, Firebase (Auth, 
-Firestore
-, FCM), REST APIs, Bloc/Cubit, MVVM, Clean Architecture
-Play Store
- | 
-Dashboard
-Developed a patient management and appointment app for clinics with 
-organised
- scheduling and visit tracking.
-Stored patient basic info, health details, and per-visit doctor notes in Firebase 
-Firestore
-.
-Enabled FCM push notifications to remind patients of upcoming appointments.
-Managed app state with Bloc/Cubit under MVVM &amp; Clean Architecture.
+• Developed a full e-commerce app covering catalog browsing, cart, and checkout.
+• Integrated real-time technical support via a WhatsApp chat integration and a custom in-app live chat built with WebSockets.
+
+VA Note — Patient Management & Appointment App
+Play Store | Dashboard
+• Developed a patient management and appointment app for clinics with organised scheduling and visit tracking.
+• Stored patient basic info, health details, and per-visit doctor notes in Firebase Firestore.
+• Enabled FCM push notifications to remind patients of upcoming appointments.
+• Managed app state with Bloc/Cubit under MVVM & Clean Architecture.
+
 Vitamin — Restaurant Order Management App
-Technologies: 
-Flutter, Dart, REST APIs, Bloc/Cubit, Clean Architecture
-Play Store
- | 
-App Store
- | 
-Admin Dashboard
-Built the customer-facing app for browsing the menu and placing restaurant orders.
-Developed the admin dashboard for managing orders, categories, products, and sub-products.
-Integrated with a third-party delivery service (Speedo) to hand off confirmed orders for fulfilment.
-Integrated the 
-QCard
- payment gateway to support in-app payments.
-Skills
-Programming Languages: 
-Dart, SQL
-Mobile Development: 
-Flutter, RESTful APIs, 
-WebSockets
-, Google Maps SDK
-Backend &amp; Cloud Services: 
-Firebase (Authentication, 
-Firestore
-, Cloud Messaging)
-State Management: 
-Bloc, Cubit, Provider
-Architecture &amp; Design Patterns: 
-Clean Architecture, MVVM, Repository Pattern, Dependency Injection (
-GetIt
-, Injectable)
-Automation: 
-AI Automation, integrating automation workflows into modern software development
-DevOps &amp; Automation: 
-CI/CD Pipelines, GitHub Actions, Version Automation, Build Configuration (Gradle, 
-Info.plist
-)
-Development Tools: 
-VS Code, Android Studio, Git, Firebase Console, Postman
-Education
+Play Store | App Store | Admin Dashboard
+• Built the customer-facing app for browsing the menu and placing restaurant orders.
+• Developed the admin dashboard for managing orders, categories, products, and sub-products.
+• Integrated with a third-party delivery service (Speedo) to hand off confirmed orders for fulfilment.
+• Integrated the QCard payment gateway to support in-app payments.
+
+SKILLS
+Programming Languages: Dart, C#, Python, C++
+Mobile Development: Flutter, RESTful APIs, WebSockets, Google Maps SDK
+Backend & Cloud Services: Firebase (Authentication, Firestore, Cloud Messaging)
+State Management: Bloc, Cubit, Provider
+Architecture & Design Patterns: Clean Architecture, MVVM, Repository Pattern, Dependency Injection (GetIt, Injectable)
+Automation: AI Automation, integrating automation workflows into modern software development
+DevOps & Automation: CI/CD Pipelines, GitHub Actions, Version Automation, Build Configuration (Gradle, Info.plist)
+Embedded & Networking: Arduino, Networks fundamentals
+Development Tools: VS Code, Android Studio, Git, Firebase Console, Postman
+
+EDUCATION
 Bachelor's Degree · Tiba Academy for Science and Technology
 Graduated 2023
